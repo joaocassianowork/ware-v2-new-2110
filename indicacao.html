@@ -1,0 +1,791 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Fale com a Ware Jurídico</title>
+  <meta name="description" content="Entre em contato com a Ware Jurídico e descubra como crescer digitalmente."/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+  <script>
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  (function(){var done=false,ev=['pointerdown','keydown','touchstart','scroll'];function load(){if(done)return;done=true;ev.forEach(function(e){removeEventListener(e,load,true)});var f=document.getElementsByTagName('script')[0],j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-N6PHGW3L';f.parentNode.insertBefore(j,f);document.dispatchEvent(new Event('ware:tags'))}ev.forEach(function(e){addEventListener(e,load,{capture:true,passive:true})});addEventListener('load',function(){setTimeout(load,2500)});document.addEventListener('click',function(e){if(window.google_tag_manager&&window.google_tag_manager['GTM-N6PHGW3L'])return;var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)window.dataLayer.push({event:'gtm.linkClick','gtm.element':a,'gtm.elementUrl':a.href,'gtm.elementTarget':a.target||'','gtm.triggers':''})},true)})();
+</script>
+<link rel="preload" href="/assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmsans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style id="ware-fonts">
+@font-face{font-family:'Sora';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/sora-300.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/sora-400.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/sora-600.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/sora-700.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:800;font-display:swap;src:url('/assets/fonts/sora-800.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/dmsans-300.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/dmsans-400.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/dmsans-500.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/dmsans-600.woff2') format('woff2')}
+  </style>
+<style>
+    :root{
+      --black:#080808;--black-2:#0e0e0e;--black-3:#141414;
+      --blue:#4F7EFF;--blue-dim:rgba(79,126,255,.1);--blue-bd:rgba(79,126,255,.22);
+      --white:#f5f2ee;--w80:rgba(245,242,238,.8);--w60:rgba(245,242,238,.6);
+      --w30:rgba(245,242,238,.3);--bd:rgba(255,255,255,.07);--bd2:rgba(255,255,255,.13);
+      --red:#ef4444;--green:#22c55e;
+      --fs:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;overflow-x:hidden;height:100%}
+    body{
+      font-family:var(--fb);
+      background:var(--black);
+      color:var(--white);
+      font-size:16px;
+      min-height:100%;
+      /* Previne microzoom iOS */
+      -webkit-text-size-adjust:100%;
+    }
+    a{text-decoration:none;color:inherit}
+    ::-webkit-scrollbar{width:2px}
+    ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+
+    /* ── PAGE ── */
+    .page{
+      min-height:100svh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:1.5rem 1rem 3rem;
+    }
+
+    /* ── LOGO ── */
+    .top-logo{
+      display:flex;align-items:center;gap:.35rem;
+      margin-bottom:1.75rem;
+      align-self:flex-start;
+    }
+    .logo-mark{font-family:var(--fs);font-size:1rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--white);line-height:1}
+    .logo-sub{font-size:.42rem;font-weight:300;letter-spacing:.24em;text-transform:uppercase;color:var(--w30);display:block;margin-top:.1rem}
+    .logo-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-left:.05rem;margin-bottom:.32rem;align-self:flex-end}
+
+    /* ── CARD ── */
+    .card{
+      width:100%;max-width:520px;
+      background:var(--black-2);
+      border:1px solid var(--bd);
+      border-radius:18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:'';position:absolute;top:0;left:0;right:0;
+      height:2px;
+      background:linear-gradient(90deg,transparent,var(--blue),transparent);
+    }
+
+    /* ── PROGRESSO ── */
+    .prog{padding:1.25rem 1.25rem 0}
+    .prog-steps{display:flex;align-items:center;margin-bottom:.7rem}
+    .ps{display:flex;align-items:center;gap:.4rem}
+    .ps-c{
+      width:26px;height:26px;border-radius:50%;
+      border:1.5px solid var(--bd2);background:var(--black-3);
+      display:flex;align-items:center;justify-content:center;
+      font-family:var(--fs);font-size:.6rem;font-weight:700;color:var(--w30);
+      flex-shrink:0;transition:all .3s;
+    }
+    .ps.active .ps-c{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 0 4px var(--blue-dim)}
+    .ps.done .ps-c{background:var(--blue);border-color:var(--blue);color:#fff}
+    .ps-l{font-size:.66rem;font-weight:500;color:var(--w30);transition:color .3s;white-space:nowrap}
+    .ps.active .ps-l{color:var(--white)}
+    .ps-line{flex:1;height:1.5px;background:var(--bd2);margin:0 .45rem;transition:background .4s}
+    .ps-line.done{background:var(--blue)}
+    .prog-track{height:2px;background:var(--bd2);border-radius:2px;overflow:hidden}
+    .prog-fill{height:100%;background:var(--blue);border-radius:2px;transition:width .45s cubic-bezier(.4,0,.2,1);width:50%}
+
+    /* ── SLIDES ── */
+    .viewport{overflow:hidden}
+    .track{display:flex;width:200%;transition:transform .38s cubic-bezier(.4,0,.2,1)}
+    .step{width:50%;flex-shrink:0;padding:1.5rem 1.25rem 1.75rem;display:flex;flex-direction:column;gap:1rem}
+
+    /* ── CABEÇALHO ── */
+    .partner-badge{
+      display:none;align-items:center;gap:.4rem;
+      background:var(--blue-dim);border:1px solid var(--blue-bd);
+      border-radius:100px;padding:.26rem .75rem;margin-bottom:.5rem;
+    }
+    .partner-badge.show{display:inline-flex}
+    .partner-badge span{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+    .step-title{font-family:var(--fs);font-size:1.4rem;font-weight:800;line-height:1.15;letter-spacing:-.03em;color:var(--white)}
+    .step-sub{font-size:.83rem;font-weight:300;line-height:1.75;color:var(--w30);margin-top:.4rem}
+    .step-sub strong{color:var(--w60);font-weight:500}
+
+    /* ── CAMPOS ── */
+    .field{display:flex;flex-direction:column;gap:.38rem}
+    .lbl{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--w30)}
+    .req{color:var(--blue)}
+
+    /* CRÍTICO: font-size 16px previne zoom no iOS */
+    .inp{
+      background:var(--black-3);
+      border:1.5px solid var(--bd);
+      border-radius:10px;
+      padding:.85rem 1rem;
+      font-size:16px; /* não alterar — previne zoom iOS */
+      font-family:var(--fb);
+      color:var(--white);
+      outline:none;
+      width:100%;
+      -webkit-appearance:none;
+      appearance:none;
+      transition:border-color .2s,box-shadow .2s;
+      min-height:50px;
+    }
+    .inp::placeholder{color:var(--w30);font-size:15px}
+    .inp:focus{border-color:var(--blue-bd);box-shadow:0 0 0 3px var(--blue-dim)}
+    .inp.err{border-color:var(--red)}
+    .inp.ok{border-color:rgba(34,197,94,.35)}
+    select.inp{cursor:pointer;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(245,242,238,.3)' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+    textarea.inp{resize:vertical;min-height:80px;line-height:1.6;font-size:16px}
+    .ferr{font-size:.7rem;color:var(--red);display:none}
+    .ferr.show{display:block}
+    .g2{display:flex;flex-direction:column;gap:1rem}
+
+    /* ── RADIO ── */
+    .rgroup{display:flex;flex-direction:column;gap:.55rem}
+    .ropt{
+      display:flex;align-items:center;gap:.75rem;
+      background:var(--black-3);border:1.5px solid var(--bd);
+      border-radius:10px;padding:.9rem 1rem;
+      cursor:pointer;transition:border-color .2s,background .2s;
+      -webkit-tap-highlight-color:transparent;min-height:52px;
+    }
+    .ropt.sel{border-color:var(--blue-bd);background:var(--blue-dim)}
+    .rdot{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--bd2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .ropt.sel .rdot{border-color:var(--blue);background:var(--blue)}
+    .rdi{width:7px;height:7px;border-radius:50%;background:#fff;opacity:0;transition:opacity .2s}
+    .ropt.sel .rdi{opacity:1}
+    .rtxt{font-size:.84rem;font-weight:400;color:var(--w60);line-height:1.4;transition:color .2s}
+    .ropt.sel .rtxt{color:var(--white)}
+
+    /* ── CHECKBOX ── */
+    .cgroup{display:flex;flex-direction:column;gap:.55rem}
+    .copt{
+      display:flex;align-items:flex-start;gap:.75rem;
+      background:var(--black-3);border:1.5px solid var(--bd);
+      border-radius:10px;padding:.9rem 1rem;
+      cursor:pointer;transition:border-color .2s,background .2s;
+      -webkit-tap-highlight-color:transparent;min-height:52px;
+    }
+    .copt.sel{border-color:var(--blue-bd);background:var(--blue-dim)}
+    .cbox{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--bd2);flex-shrink:0;margin-top:.1rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .copt.sel .cbox{border-color:var(--blue);background:var(--blue)}
+    .cbox svg{opacity:0;transition:opacity .2s}
+    .copt.sel .cbox svg{opacity:1}
+    .ctxt{font-size:.84rem;font-weight:400;color:var(--w60);line-height:1.4;transition:color .2s}
+    .copt.sel .ctxt{color:var(--white)}
+    .outro-wrap{display:none;margin-top:.55rem}
+    .outro-wrap.show{display:block}
+
+    /* ── CARD SELECT ── */
+    .csgroup{display:flex;flex-direction:column;gap:.55rem}
+    .cs{
+      background:var(--black-3);border:1.5px solid var(--bd);
+      border-radius:10px;padding:.9rem 1rem;
+      cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+      transition:border-color .2s,background .2s;
+      -webkit-tap-highlight-color:transparent;min-height:60px;
+    }
+    .cs.sel{border-color:var(--blue-bd);background:var(--blue-dim)}
+    .cs-body{display:flex;flex-direction:column;gap:.18rem}
+    .cs-title{font-family:var(--fs);font-size:.85rem;font-weight:700;color:var(--w80);letter-spacing:-.01em;transition:color .2s;line-height:1.2}
+    .cs.sel .cs-title{color:var(--white)}
+    .cs-desc{font-size:.74rem;font-weight:300;color:var(--w30);line-height:1.3}
+    .cs-dot{width:8px;height:8px;border-radius:50%;background:var(--bd2);flex-shrink:0;transition:background .2s}
+    .cs.sel .cs-dot{background:var(--blue)}
+
+    /* ── BOTÕES ── */
+    .btn{
+      width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;
+      padding:1rem 1.5rem;border-radius:12px;border:none;cursor:pointer;
+      font-family:var(--fb);font-size:16px;font-weight:700;letter-spacing:.01em;
+      transition:opacity .2s,transform .15s,box-shadow .2s;
+      -webkit-tap-highlight-color:transparent;min-height:52px;
+    }
+    .btn:active{transform:scale(.97)}
+    .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    .btn-p{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(79,126,255,.2);flex-direction:column;gap:.12rem}
+    .btn-p:hover:not(:disabled){opacity:.92;box-shadow:0 12px 32px rgba(79,126,255,.3)}
+    .btn-p-main{font-size:.9rem;font-weight:700}
+    .btn-p-sub{font-size:.65rem;font-weight:400;opacity:.7;letter-spacing:.04em}
+    .btn-ghost{background:transparent;color:var(--w30);border:1.5px solid var(--bd)}
+    .btn-ghost:hover{border-color:var(--bd2);color:var(--w60)}
+    .btn-wa{background:#25D366;color:#fff}
+    .btn-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+    .btn-site{background:var(--black-3);color:var(--w60);border:1.5px solid var(--bd)}
+    .btn-wa:hover,.btn-ig:hover,.btn-site:hover{opacity:.92}
+    .spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none;flex-shrink:0}
+    .btn-p.loading .spinner{display:block}
+    .btn-p.loading .btn-p-main,.btn-p.loading .btn-p-sub{display:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* ── OBRIGADO ── */
+    .thankyou{
+      display:none;flex-direction:column;align-items:center;text-align:center;
+      width:100%;max-width:520px;
+      animation:fadeUp .45s ease both;
+    }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .ty-icon{
+      width:64px;height:64px;border-radius:50%;
+      background:var(--blue-dim);border:1px solid var(--blue-bd);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:1.5rem;
+    }
+    .ty-check path{
+      stroke-dasharray:40;stroke-dashoffset:40;
+      animation:drawCheck .55s .15s cubic-bezier(.4,0,.2,1) forwards;
+    }
+    @keyframes drawCheck{to{stroke-dashoffset:0}}
+    .ty-title{font-family:var(--fs);font-size:1.75rem;font-weight:800;letter-spacing:-.03em;color:var(--white);margin-bottom:.5rem}
+    .ty-sub{font-size:.85rem;font-weight:300;line-height:1.8;color:var(--w60);max-width:380px;margin-bottom:2rem}
+
+    /* Timeline */
+    .tl{
+      width:100%;background:var(--black-2);border:1px solid var(--bd);
+      border-radius:16px;padding:1.5rem;margin-bottom:1.75rem;
+      position:relative;overflow:hidden;text-align:left;
+    }
+    .tl::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+    .tl-head{font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:1.25rem;display:flex;align-items:center;gap:.4rem}
+    .tl-head::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue)}
+    .tl-list{display:flex;flex-direction:column;padding-left:1.25rem;position:relative}
+    .tl-list::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1.5px;background:linear-gradient(to bottom,var(--blue),rgba(79,126,255,.15))}
+    .tl-item{padding:.7rem 0;position:relative}
+    .tl-item:first-child{padding-top:0}
+    .tl-item:last-child{padding-bottom:0}
+    .tl-dot{position:absolute;left:-1.25rem;top:.8rem;width:13px;height:13px;border-radius:50%;border:2px solid var(--blue);background:var(--black-2);z-index:1}
+    .tl-item:first-child .tl-dot{background:var(--blue);top:.05rem}
+    .tl-when{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.2rem}
+    .tl-item:not(:first-child) .tl-when{color:var(--w30)}
+    .tl-what{font-family:var(--fs);font-size:.84rem;font-weight:700;color:var(--white);margin-bottom:.15rem;letter-spacing:-.01em}
+    .tl-desc{font-size:.76rem;font-weight:300;color:var(--w30);line-height:1.55}
+
+    .ty-cta-label{font-size:.78rem;font-weight:300;color:var(--w30);margin-bottom:.85rem}
+    .ty-btns{width:100%;max-width:400px;display:flex;flex-direction:column;gap:.65rem}
+
+    /* ── NOT FOUND ── */
+    .notfound{
+      display:none;flex-direction:column;align-items:center;text-align:center;
+      width:100%;max-width:360px;padding:1rem 0 2rem;gap:.75rem;
+    }
+    .nf-line{width:32px;height:2px;background:var(--bd2);border-radius:2px}
+    .nf-title{font-family:var(--fs);font-size:1rem;font-weight:700;color:var(--white)}
+    .nf-desc{font-size:.82rem;font-weight:300;color:var(--w30);line-height:1.7}
+
+    /* ── FOOTER ── */
+    .foot{margin-top:2rem;text-align:center}
+    .foot p{font-size:.63rem;font-weight:300;color:var(--w30);line-height:1.6}
+
+    /* ── DESKTOP ── */
+    @media(min-width:560px){
+      .page{padding:2.5rem 1.5rem 4rem}
+      .step{padding:2rem}
+      .prog{padding:1.5rem 2rem 0}
+      .g2{flex-direction:row}
+      .g2>*{flex:1}
+      .card{border-radius:22px}
+      .btn-p{flex-direction:row;gap:.5rem}
+      .btn-p-sub{display:none}
+      .step-title{font-size:1.6rem}
+    }
+    @media(min-width:560px) and (max-width:900px){
+      .card{max-width:560px}
+    }
+    @media(min-width:900px){
+      .card{max-width:580px}
+      .thankyou{max-width:580px}
+    }
+  </style>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@warejuridico"/>
+  <meta name="twitter:title" content="Programa de Indicação | Ware Jurídico"/>
+  <meta name="twitter:description" content="Indique outros advogados para a Ware Jurídico e seja recompensado. Ajude colegas a crescerem digitalmente."/>
+  <meta name="twitter:image" content="https://warejuridico.com.br/assets/og-home.jpg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://warejuridico.com.br/#webpage",
+  "url": "https://warejuridico.com.br/",
+  "name": "Fale com a Ware Jurídico",
+  "description": "Entre em contato com a Ware Jurídico e descubra como crescer digitalmente.",
+  "isPartOf": {"@id": "https://warejuridico.com.br/#website"},
+  "publisher": {"@id": "https://warejuridico.com.br/#organization"},
+  "dateModified": "2026-06-21",
+  "inLanguage": "pt-BR"
+}
+</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6PHGW3L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="page">
+
+  <a href="/" class="top-logo">
+    <div><span class="logo-mark">WARE</span><span class="logo-sub">Marketing Jurídico</span></div>
+    <div class="logo-dot"></div>
+  </a>
+
+  <!-- CARD -->
+  <div class="card" id="formCard">
+    <div class="prog">
+      <div class="prog-steps">
+        <div class="ps active" id="ps1">
+          <div class="ps-c"><span>1</span></div>
+          <span class="ps-l">Seus dados</span>
+        </div>
+        <div class="ps-line" id="pline"></div>
+        <div class="ps" id="ps2" style="justify-content:flex-end">
+          <span class="ps-l">Seu escritório</span>
+          <div class="ps-c"><span>2</span></div>
+        </div>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="pFill"></div></div>
+    </div>
+
+    <div class="viewport">
+      <div class="track" id="track">
+
+        <!-- PASSO 1 -->
+        <div class="step" id="step1">
+          <div>
+            <div class="partner-badge" id="pBadge">
+              <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+                <circle cx="5" cy="5" r="4" stroke="#4F7EFF" stroke-width="1.2"/>
+                <path d="M3 5l1.5 1.5L7 3.5" stroke="#4F7EFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span id="pBadgeTxt"></span>
+            </div>
+            <h1 class="step-title" id="s1title">Fale com a Ware Jurídico</h1>
+            <p class="step-sub" id="s1sub">Preencha os dados abaixo. Nossa equipe entra em contato para entender melhor o seu momento e o que faz sentido para o seu escritório.</p>
+          </div>
+
+          <div class="g2">
+            <div class="field">
+              <label class="lbl" for="fn">Nome completo <span class="req">*</span></label>
+              <input class="inp" type="text" id="fn" placeholder="Dr. João Silva" autocomplete="name" inputmode="text"/>
+              <span class="ferr" id="en">Informe seu nome completo</span>
+            </div>
+            <div class="field">
+              <label class="lbl" for="fw">WhatsApp <span class="req">*</span></label>
+              <input class="inp" type="tel" id="fw" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric"/>
+              <span class="ferr" id="ew">Número inválido</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="fa">Área de atuação <span class="req">*</span></label>
+            <input class="inp" type="text" id="fa" list="alist" placeholder="Ex: Direito Trabalhista" autocomplete="off"/>
+            <datalist id="alist">
+              <option>Direito Trabalhista</option>
+              <option>Direito de Família</option>
+              <option>Direito Empresarial</option>
+              <option>Direito Tributário</option>
+              <option>Direito Imobiliário</option>
+              <option>Direito Previdenciário</option>
+              <option>Direito Criminal</option>
+              <option>Direito do Consumidor</option>
+              <option>Direito Civil</option>
+              <option>Direito Administrativo</option>
+              <option>Direito Ambiental</option>
+              <option>Direito da Saúde</option>
+              <option>Direito de Trânsito</option>
+              <option>Direito Bancário</option>
+              <option>Direito Digital</option>
+              <option>Direito Eleitoral</option>
+              <option>Direito Imigratório</option>
+              <option>Direito Internacional</option>
+              <option>Propriedade Intelectual</option>
+              <option>Direito das Sucessões</option>
+            </datalist>
+            <span class="ferr" id="ea">Informe sua área de atuação</span>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="fc">Cidade <span class="req">*</span></label>
+            <input class="inp" type="text" id="fc" placeholder="São Paulo" inputmode="text"/>
+            <span class="ferr" id="ec">Informe sua cidade</span>
+          </div>
+
+          <button class="btn btn-p" id="btnNext" type="button">
+            <span class="btn-p-main">Continuar</span>
+            <span class="btn-p-sub">Passo 1 de 2</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0">
+              <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="step" id="step2">
+          <div>
+            <h2 class="step-title">Seu escritório</h2>
+            <p class="step-sub">Essas informações nos ajudam a entender melhor a sua realidade antes de conversar.</p>
+          </div>
+
+          <div class="field">
+            <label class="lbl">Relação com marketing hoje <span class="req">*</span></label>
+            <div class="rgroup" id="gmkt">
+              <label class="ropt" onclick="pickR(this,'gmkt','emkt')">
+                <div class="rdot"><div class="rdi"></div></div>
+                <span class="rtxt">Nunca investi — dependo 100% de indicações</span>
+              </label>
+              <label class="ropt" onclick="pickR(this,'gmkt','emkt')">
+                <div class="rdot"><div class="rdi"></div></div>
+                <span class="rtxt">Já tentei algo, mas sem resultado</span>
+              </label>
+              <label class="ropt" onclick="pickR(this,'gmkt','emkt')">
+                <div class="rdot"><div class="rdi"></div></div>
+                <span class="rtxt">Invisto atualmente e quero melhores resultados</span>
+              </label>
+            </div>
+            <span class="ferr" id="emkt">Selecione uma opção</span>
+          </div>
+
+          <div class="field">
+            <label class="lbl">Maiores desafios do escritório <span class="req">*</span></label>
+            <div class="cgroup" id="gdes">
+              <label class="copt" onclick="toggleC(this)">
+                <div class="cbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="ctxt">Não apareço no Google quando clientes me pesquisam</span>
+              </label>
+              <label class="copt" onclick="toggleC(this)">
+                <div class="cbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="ctxt">Não sei captar clientes além das indicações</span>
+              </label>
+              <label class="copt" onclick="toggleC(this)">
+                <div class="cbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="ctxt">Recebo contatos mas tenho dificuldade em converter</span>
+              </label>
+              <label class="copt" onclick="toggleC(this)">
+                <div class="cbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="ctxt">Não tenho tempo para cuidar do marketing</span>
+              </label>
+              <label class="copt" id="outroOpt" onclick="toggleC(this,true)">
+                <div class="cbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="ctxt">Outro</span>
+              </label>
+            </div>
+            <div class="outro-wrap" id="outroWrap">
+              <input class="inp" type="text" id="outroInp" placeholder="Descreva seu maior desafio..."/>
+            </div>
+            <span class="ferr" id="edes">Selecione ao menos um desafio</span>
+          </div>
+
+          <div class="field">
+            <label class="lbl">Qual é o seu momento agora? <span class="req">*</span></label>
+            <div class="csgroup" id="gurg">
+              <div class="cs" onclick="pickCS(this,'gurg','eurg')" data-v="pronto">
+                <div class="cs-body"><div class="cs-title">Estou pronto para começar</div><div class="cs-desc">Já tomei a decisão e quero avançar</div></div>
+                <div class="cs-dot"></div>
+              </div>
+              <div class="cs" onclick="pickCS(this,'gurg','eurg')" data-v="comparando">
+                <div class="cs-body"><div class="cs-title">Estou comparando opções</div><div class="cs-desc">Pesquisando antes de decidir</div></div>
+                <div class="cs-dot"></div>
+              </div>
+              <div class="cs" onclick="pickCS(this,'gurg','eurg')" data-v="conhecendo">
+                <div class="cs-body"><div class="cs-title">Ainda estou conhecendo o mercado</div><div class="cs-desc">Quero entender melhor antes de qualquer passo</div></div>
+                <div class="cs-dot"></div>
+              </div>
+            </div>
+            <span class="ferr" id="eurg">Selecione uma opção</span>
+          </div>
+
+          <div class="field">
+            <label class="lbl">Como é o seu escritório hoje? <span class="req">*</span></label>
+            <div class="csgroup" id="gest">
+              <div class="cs" onclick="pickCS(this,'gest','eest')" data-v="solo">
+                <div class="cs-body"><div class="cs-title">Trabalho sozinho</div><div class="cs-desc">Sou advogado individual</div></div>
+                <div class="cs-dot"></div>
+              </div>
+              <div class="cs" onclick="pickCS(this,'gest','eest')" data-v="pequeno">
+                <div class="cs-body"><div class="cs-title">Somos 2 a 3 pessoas</div><div class="cs-desc">Pequeno escritório ou sociedade</div></div>
+                <div class="cs-dot"></div>
+              </div>
+              <div class="cs" onclick="pickCS(this,'gest','eest')" data-v="medio">
+                <div class="cs-body"><div class="cs-title">Mais de 3 pessoas</div><div class="cs-desc">Escritório estruturado com equipe</div></div>
+                <div class="cs-dot"></div>
+              </div>
+            </div>
+            <span class="ferr" id="eest">Selecione uma opção</span>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="fl">Quer nos contar algo mais?</label>
+            <textarea class="inp" id="fl" placeholder="Qualquer informação que queira compartilhar..."></textarea>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:.65rem">
+            <button class="btn btn-p" id="btnSub" type="button">
+              <div class="spinner"></div>
+              <span class="btn-p-main">Enviar</span>
+              <span class="btn-p-sub">Gratuito · Sem compromisso</span>
+            </button>
+            <button class="btn btn-ghost" id="btnBack" type="button">Voltar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OBRIGADO -->
+  <div class="thankyou" id="thankyou">
+    <div class="ty-icon">
+      <svg class="ty-check" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M6 16l8 8 12-12" stroke="#4F7EFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="ty-title">Recebemos seu contato.</h2>
+    <p class="ty-sub" id="tySub">Nossa equipe vai entrar em contato em breve para uma conversa inicial — sem pressa, sem compromisso.</p>
+
+    <div class="tl">
+      <div class="tl-head">O que acontece agora</div>
+      <div class="tl-list">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-when">Agora</div>
+          <div class="tl-what">Informações recebidas</div>
+          <div class="tl-desc">Seus dados chegaram para nossa equipe e estão sendo revisados.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-when">Em breve</div>
+          <div class="tl-what">A Ware entra em contato</div>
+          <div class="tl-desc">Vamos bater um papo para entender melhor o seu momento e o que faz sentido para o seu escritório.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-when">Na conversa</div>
+          <div class="tl-what">Entendemos e apresentamos</div>
+          <div class="tl-desc">Com base no que você nos contar, apresentamos o que pode fazer sentido para você — sem pressão.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ty-cta-label">Quer adiantar a conversa? Fale conosco agora.</p>
+    <div class="ty-btns">
+      <a href="https://wa.me/5518996745458?text=Ol%C3%A1%21%20Acabei%20de%20preencher%20o%20formul%C3%A1rio%20e%20gostaria%20de%20conversar."
+        class="btn btn-wa" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+      <a href="https://www.instagram.com/ware.juridico/"
+        class="btn btn-ig" target="_blank" rel="noopener noreferrer">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Seguir no Instagram
+      </a>
+      <a href="https://warejuridico.com.br"
+        class="btn btn-site" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        warejuridico.com.br
+      </a>
+    </div>
+  </div>
+
+  <!-- NOT FOUND -->
+  <div class="notfound" id="notfound">
+    <div class="nf-line"></div>
+    <div class="nf-title">Link inválido</div>
+    <p class="nf-desc">Este link não é válido ou o parceiro não foi encontrado. Verifique com quem te enviou.</p>
+    <a href="/" style="font-size:.8rem;color:var(--blue);margin-top:.25rem">Ir para warejuridico.com.br →</a>
+  </div>
+
+  <div class="foot"><p>warejuridico.com.br · Dados tratados com confidencialidade</p></div>
+
+</div>
+
+<script>
+var SUPA = 'https://fbhaznzuqyagpmajqfuc.supabase.co';
+var KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiaGF6bnp1cXlhZ3BtYWpxZnVjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTgwNDE3NSwiZXhwIjoyMDk3MzgwMTc1fQ.bcc_QAvYKfmHQ9TsjTOSkA8S3jVBlduID6hMxsbrdU8';
+
+var pid = null, pname = null;
+var slug = (new URLSearchParams(location.search).get('p') || '').toLowerCase().trim();
+
+/* INIT */
+async function init() {
+  if (!slug) return; /* sem slug = modo evento, funciona normalmente */
+  try {
+    var r = await fetch(
+      SUPA + '/rest/v1/partners?username=eq.' + encodeURIComponent(slug) + '&select=id,name,partner_message',
+      { headers: { apikey: KEY, Authorization: 'Bearer ' + KEY } }
+    );
+    var d = await r.json();
+    if (!d || !d.length) { showNF(); return; }
+    pid   = d[0].id;
+    pname = d[0].name;
+    var b = document.getElementById('pBadge');
+    b.classList.add('show');
+    document.getElementById('pBadgeTxt').textContent = 'Indicação via ' + pname;
+    if (d[0].partner_message) {
+      document.getElementById('s1sub').innerHTML =
+        d[0].partner_message.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+    }
+  } catch(e) { /* segue sem partner */ }
+}
+
+function showNF() {
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('notfound').style.display = 'flex';
+}
+
+/* MÁSCARA */
+document.getElementById('fw').addEventListener('input', function() {
+  var v = this.value.replace(/\D/g,'').slice(0,11);
+  if(v.length>10) v=v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
+  else if(v.length>6) v=v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
+  else if(v.length>2) v=v.replace(/^(\d{2})(\d*)$/,'($1) $2');
+  else if(v.length) v='('+v;
+  this.value=v;
+});
+
+/* BLUR VALIDATION */
+function onBlur(id, eid, fn) {
+  document.getElementById(id).addEventListener('blur', function() {
+    var ok = fn(this.value);
+    this.classList.toggle('err', !ok && this.value.length>0);
+    this.classList.toggle('ok', ok);
+    document.getElementById(eid).classList.toggle('show', !ok && this.value.length>0);
+  });
+}
+onBlur('fn','en', function(v){return v.trim().length>=3});
+onBlur('fw','ew', function(v){return v.replace(/\D/g,'').length>=10});
+onBlur('fa','ea', function(v){return v.trim().length>=2});
+onBlur('fc','ec', function(v){return v.trim().length>=2});
+
+/* INTERAÇÕES */
+function pickR(el, gid, eid) {
+  document.querySelectorAll('#'+gid+' .ropt').forEach(function(o){o.classList.remove('sel')});
+  el.classList.add('sel');
+  document.getElementById(eid).classList.remove('show');
+}
+
+function toggleC(el, isOutro) {
+  el.classList.toggle('sel');
+  if(isOutro) {
+    var w = document.getElementById('outroWrap');
+    w.classList.toggle('show', el.classList.contains('sel'));
+    if(!el.classList.contains('sel')) document.getElementById('outroInp').value='';
+  }
+  if(document.querySelectorAll('#gdes .copt.sel').length)
+    document.getElementById('edes').classList.remove('show');
+}
+
+function pickCS(el, gid, eid) {
+  document.querySelectorAll('#'+gid+' .cs').forEach(function(c){c.classList.remove('sel')});
+  el.classList.add('sel');
+  document.getElementById(eid).classList.remove('show');
+}
+
+/* VALIDAÇÃO PASSO 1 */
+function v1() {
+  var ok=true;
+  function chk(id,eid,fn){
+    var v=document.getElementById(id).value;
+    var valid=fn(v);
+    document.getElementById(id).classList.toggle('err',!valid);
+    document.getElementById(id).classList.toggle('ok',valid);
+    document.getElementById(eid).classList.toggle('show',!valid);
+    if(!valid) ok=false;
+  }
+  chk('fn','en',function(v){return v.trim().length>=3});
+  chk('fw','ew',function(v){return v.replace(/\D/g,'').length>=10});
+  chk('fa','ea',function(v){return v.trim().length>=2});
+  chk('fc','ec',function(v){return v.trim().length>=2});
+  return ok;
+}
+
+/* VALIDAÇÃO PASSO 2 */
+function v2() {
+  var ok=true;
+  if(!document.querySelector('#gmkt .ropt.sel')){document.getElementById('emkt').classList.add('show');ok=false}
+  if(!document.querySelectorAll('#gdes .copt.sel').length){document.getElementById('edes').classList.add('show');ok=false}
+  if(!document.querySelector('#gurg .cs.sel')){document.getElementById('eurg').classList.add('show');ok=false}
+  if(!document.querySelector('#gest .cs.sel')){document.getElementById('eest').classList.add('show');ok=false}
+  return ok;
+}
+
+/* NAVEGAÇÃO */
+document.getElementById('btnNext').addEventListener('click', function(){
+  if(!v1()) return;
+  document.getElementById('track').style.transform='translateX(-50%)';
+  document.getElementById('ps1').classList.remove('active');
+  document.getElementById('ps1').classList.add('done');
+  document.getElementById('pline').classList.add('done');
+  document.getElementById('ps2').classList.add('active');
+  document.getElementById('pFill').style.width='100%';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+document.getElementById('btnBack').addEventListener('click', function(){
+  document.getElementById('track').style.transform='translateX(0)';
+  document.getElementById('ps2').classList.remove('active');
+  document.getElementById('ps1').classList.remove('done');
+  document.getElementById('ps1').classList.add('active');
+  document.getElementById('pline').classList.remove('done');
+  document.getElementById('pFill').style.width='50%';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* SUBMIT */
+document.getElementById('btnSub').addEventListener('click', async function(){
+  if(!v2()) return;
+  var btn=this;
+  btn.disabled=true;
+  btn.classList.add('loading');
+
+  var des=[];
+  document.querySelectorAll('#gdes .copt.sel').forEach(function(el){
+    var t=el.querySelector('.ctxt').textContent.trim();
+    if(t==='Outro'){var v=document.getElementById('outroInp').value.trim();if(v)des.push('Outro: '+v);}
+    else des.push(t);
+  });
+
+  var payload={
+    name:     document.getElementById('fn').value.trim(),
+    whatsapp: document.getElementById('fw').value.trim(),
+    area:     document.getElementById('fa').value.trim(),
+    city:     document.getElementById('fc').value.trim(),
+    marketing:document.querySelector('#gmkt .ropt.sel .rtxt').textContent.trim(),
+    desafio:  des.join(' | '),
+    quando:   document.querySelector('#gurg .cs.sel').dataset.v,
+    equipe:   document.querySelector('#gest .cs.sel').dataset.v,
+    partner_id:pid||null,
+    status:0,
+    date:new Date().toISOString().split('T')[0],
+    contact_status:0,
+    payment_status:0,
+    notes:document.getElementById('fl').value.trim()||null,
+  };
+
+  try {
+    var res=await fetch(SUPA+'/rest/v1/leads',{
+      method:'POST',
+      headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
+      body:JSON.stringify(payload),
+    });
+    if(res.ok||res.status===201){
+      document.getElementById('formCard').style.display='none';
+      var ty=document.getElementById('thankyou');
+      ty.style.display='flex';
+      if(pname) document.getElementById('tySub').textContent=
+        'Recebemos seu contato via '+pname+'. Nossa equipe vai entrar em contato em breve para uma conversa inicial.';
+      window.scrollTo({top:0,behavior:'smooth'});
+    } else throw new Error(res.status);
+  } catch(e){
+    btn.disabled=false;
+    btn.classList.remove('loading');
+    alert('Não foi possível enviar. Tente novamente ou fale pelo WhatsApp: (18) 99674-5458');
+  }
+});
+
+init();
+</script>
+</body>
+</html>
