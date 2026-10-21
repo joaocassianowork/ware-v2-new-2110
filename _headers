@@ -1,0 +1,46 @@
+# Fontes auto-hospedadas — nunca mudam, cache máximo
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Imagens e ícones estáticos
+/assets/*.jpg
+  Cache-Control: public, max-age=31536000
+/assets/*.png
+  Cache-Control: public, max-age=31536000
+/assets/*.webp
+  Cache-Control: public, max-age=31536000
+/assets/*.svg
+  Cache-Control: public, max-age=31536000
+/assets/og-home.jpg
+  Cache-Control: public, max-age=31536000
+
+# CSS compartilhado — cache moderado com revalidação (pode ser editado)
+/assets/ware.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Segurança básica em todas as páginas
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Páginas internas e de clientes — nunca indexar
+/bohusdiagnostico
+  X-Robots-Tag: noindex, nofollow
+/onboarding-wallace-adv
+  X-Robots-Tag: noindex, nofollow
+/onboardingadvocacia
+  X-Robots-Tag: noindex, nofollow
+/apresentacao
+  X-Robots-Tag: noindex, nofollow
+/apresentacao-padrao
+  X-Robots-Tag: noindex, nofollow
+/apresentacao-site
+  X-Robots-Tag: noindex, nofollow
+/media-kit
+  X-Robots-Tag: noindex, nofollow
+/indicacao
+  X-Robots-Tag: noindex, nofollow
+/conselho/*
+  X-Robots-Tag: noindex, nofollow

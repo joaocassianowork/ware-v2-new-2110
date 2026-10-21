@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ware Jurídico · Apresentação Comercial</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --black:#080808;--black-2:#0e0e0e;--black-3:#141414;
+  --blue:#4F7EFF;--blue-dim:rgba(79,126,255,.1);--blue-border:rgba(79,126,255,.22);
+  --white:#f5f2ee;--w80:rgba(245,242,238,.82);--w60:rgba(245,242,238,.6);--w30:rgba(245,242,238,.3);
+  --line:rgba(245,242,238,.08);--fs:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);background:var(--black);color:var(--white)}
+.deck{height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;scrollbar-width:none}
+.deck::-webkit-scrollbar{display:none}
+.slide{min-height:100vh;min-height:100dvh;scroll-snap-align:start;display:flex;align-items:center;padding:clamp(2rem,5vw,4.5rem);padding-top:clamp(4rem,8vw,6.5rem);padding-bottom:clamp(4rem,8vw,6.5rem);position:relative;border-bottom:1px solid var(--line)}
+.slide-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1}
+.wordmark{position:fixed;top:clamp(1rem,2.5vw,1.75rem);left:clamp(1.5rem,5vw,4.5rem);font-family:var(--fs);font-size:.82rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--white);z-index:50;user-select:none}
+.wordmark span{color:var(--blue)}
+.navdots{position:fixed;right:clamp(.75rem,2.5vw,2rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:11px;z-index:50}
+.navdots button{width:8px;height:8px;border-radius:50%;border:1px solid var(--w30);background:transparent;cursor:pointer;padding:0;transition:all .3s;position:relative}
+.navdots button.active{background:var(--blue);border-color:var(--blue);transform:scale(1.3)}
+.navdots button .nl{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:var(--fs);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--w60);white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.navdots button:hover .nl{opacity:1}
+.nav-arrows{position:fixed;bottom:clamp(1.2rem,3vw,2rem);left:50%;transform:translateX(-50%);display:flex;gap:.65rem;z-index:50}
+.nav-arrows button{width:38px;height:38px;border-radius:50%;background:rgba(14,14,14,.92);border:1px solid var(--line);color:var(--w30);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.nav-arrows button:hover{border-color:var(--blue);color:var(--white)}
+.nav-arrows button:disabled{opacity:.2;cursor:not-allowed}
+.slide-count{position:fixed;bottom:clamp(1.2rem,3vw,2rem);right:clamp(1.5rem,5vw,4.5rem);font-family:var(--fs);font-size:.6rem;letter-spacing:.2em;color:var(--w30);z-index:50}
+.slide-count b{color:var(--white)}
+.eyebrow{font-family:var(--fs);font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:12px;margin-bottom:clamp(1.25rem,2.5vw,2rem)}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--blue);display:block;flex-shrink:0}
+h1{font-family:var(--fs);font-size:clamp(2.4rem,6vw,5rem);font-weight:800;line-height:1.02;letter-spacing:-.04em}
+h2{font-family:var(--fs);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:1.06;letter-spacing:-.035em}
+.acc{color:var(--blue)}
+.lead{font-size:clamp(1rem,1.4vw,1.15rem);font-weight:300;line-height:1.85;color:var(--w60);margin-top:clamp(.85rem,1.8vw,1.25rem)}
+.grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.03;pointer-events:none;z-index:0}
+.glow-tr{position:absolute;top:-150px;right:-150px;width:550px;height:550px;background:radial-gradient(circle,rgba(79,126,255,.06) 0%,transparent 65%);pointer-events:none;z-index:0}
+.glow-bl{position:absolute;bottom:-150px;left:-150px;width:550px;height:550px;background:radial-gradient(circle,rgba(79,126,255,.05) 0%,transparent 65%);pointer-events:none;z-index:0}
+.glow-c{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(79,126,255,.05) 0%,transparent 60%);pointer-events:none;z-index:0}
+.card{background:var(--black-2);border:1px solid var(--line);border-radius:16px;padding:1.5rem;transition:border-color .3s}
+.card-hi{border-color:var(--blue-border);background:linear-gradient(135deg,rgba(79,126,255,.07),transparent 60%)}
+/* VER BUTTONS */
+.ver-btn{width:28px;height:28px;border-radius:50%;background:transparent;border:1px solid var(--line);color:var(--w30);cursor:pointer;font-family:var(--fs);font-size:.65rem;font-weight:700;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.ver-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.ver-btn:hover:not(.active){border-color:var(--w30);color:var(--white)}
+/* TRIGGER CARDS */
+.trigger-card{padding:1.1rem 1.4rem;background:var(--black-2);border:1px solid var(--line);border-radius:14px;display:flex;align-items:flex-start;gap:1rem;transition:border-color .4s,transform .4s,opacity .4s;opacity:.35;transform:translateX(-10px)}
+.trigger-card.lit{opacity:1;border-color:var(--blue-border);transform:translateX(0)}
+.trigger-num{font-family:var(--fs);font-size:1.6rem;font-weight:800;color:var(--blue);opacity:.2;line-height:1;flex-shrink:0;transition:opacity .4s}
+.trigger-card.lit .trigger-num{opacity:1}
+.trigger-title{font-family:var(--fs);font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.trigger-desc{font-size:.82rem;font-weight:300;color:var(--w30);line-height:1.65}
+/* PRICING */
+.price-card{background:var(--black-2);border:1px solid var(--line);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;transition:border-color .3s;position:relative;overflow:hidden}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--line);transition:background .3s}
+.price-card.featured{border-color:var(--blue-border)}
+.price-card.featured::before{background:linear-gradient(90deg,var(--blue),rgba(79,126,255,.3))}
+.price-badge{position:absolute;top:1.1rem;right:1.1rem;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-dim);border:1px solid var(--blue-border);border-radius:100px;padding:.18rem .6rem}
+.pf-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.pf-list li{font-size:.8rem;font-weight:300;color:var(--w60);display:flex;align-items:flex-start;gap:.55rem;line-height:1.5}
+.pf-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.42rem}
+/* NEURAL CANVAS */
+.neural-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+/* SCROLL HINT */
+.scroll-hint{margin-top:clamp(2rem,4vw,3.5rem);display:flex;align-items:center;gap:.7rem;font-family:var(--fs);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--w30)}
+.scroll-hint svg{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+/* COUNT UP */
+.cu{display:inline-block}
+/* BRAIN NODES */
+@keyframes nodeGlow{0%,100%{fill:rgba(79,126,255,.2)}50%{fill:rgba(79,126,255,.5)}}
+.bn{animation:nodeGlow 3s ease-in-out infinite}
+@keyframes dashMove{to{stroke-dashoffset:-20}}
+.bl{animation:dashMove 3s linear infinite}
+@keyframes pulseRing{0%{r:20;opacity:.6}100%{r:60;opacity:0}}
+/* MOBILE */
+/* TIMELINE */
+.tl-line-desktop{display:block}
+.tl-item{position:relative;z-index:1}
+.tl-dot{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--black-3);border:1px solid var(--blue-border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:.85rem;
+  font-family:var(--fs);font-size:.68rem;font-weight:700;color:var(--blue);
+  transition:all .5s;
+}
+.tl-item.lit .tl-dot{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 0 18px rgba(79,126,255,.3)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .slide{
+    align-items:flex-start;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    padding:4.5rem 1.25rem 5.5rem;
+  }
+  /* Grids colapsam para 1 coluna */
+  .brain-layout,.problem-grid,.diag-grid,.cases-grid,.pricing-grid{
+    grid-template-columns:1fr !important;
+    gap:.85rem !important;
+  }
+  /* SVG cérebro some */
+  .brain-visual{display:none}
+  /* Timeline vira coluna */
+  #timeline90{
+    grid-template-columns:1fr !important;
+    gap:.75rem !important;
+  }
+  .tl-line-desktop{display:none !important}
+  .tl-dot{width:38px;height:38px;font-size:.62rem;margin-bottom:.6rem}
+  /* Trigger cards */
+  .trigger-card{padding:.9rem 1rem}
+  .trigger-num{font-size:1.3rem}
+  .trigger-title{font-size:.85rem}
+  .trigger-desc{font-size:.78rem}
+  /* Cases */
+  #s4 > div > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  /* Versões transformação */
+  #verA > div[style*="grid-template-columns:1fr 1fr"],
+  #verC > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  /* Avulsos planos */
+  div[style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:1fr 1fr !important;
+  }
+  /* Planos pricing */
+  div[style*="grid-template-columns:repeat(3,1fr)"]{
+    grid-template-columns:1fr !important;
+  }
+  /* Nav ajustada */
+  .navdots{right:.5rem}
+  .nav-arrows button{width:34px;height:34px}
+  .slide-count{right:1rem;font-size:.55rem}
+  .wordmark{font-size:.72rem;letter-spacing:.22em;top:.9rem;left:1rem}
+  /* H1 e H2 mobile */
+  h1{font-size:clamp(2rem,8vw,3rem) !important}
+  h2{font-size:clamp(1.4rem,6vw,2.2rem) !important}
+  /* Cards transformação */
+  #s5 div[style*="grid-template-columns:repeat(3,1fr)"]{
+    grid-template-columns:1fr !important;
+  }
+  /* Stat cards problema */
+  #s2 div[style*="grid-template-columns:repeat(3,1fr)"]{
+    grid-template-columns:1fr !important;
+  }
+  #s2 div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  /* Diagnóstico */
+  #s3 div[style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:1fr 1fr !important;
+  }
+  /* Planos avulsos */
+  #s6 div[style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:1fr 1fr !important;
+  }
+  #s5 div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  #s6 div[style*="grid-template-columns:repeat(3,1fr)"]{
+    grid-template-columns:1fr !important;
+  }
+  /* Botões próx passo */
+  #s7 div[style*="display:flex;flex-wrap:wrap"]{
+    flex-direction:column !important;
+  }
+  #s7 a{width:100%;justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="wordmark">WARE<span>.</span></div>
+
+<nav class="navdots" id="navdots">
+  <button data-i="0"><span class="nl">Abertura</span></button>
+  <button data-i="1"><span class="nl">O Cérebro</span></button>
+  <button data-i="2"><span class="nl">O Problema</span></button>
+  <button data-i="3"><span class="nl">Diagnóstico</span></button>
+  <button data-i="4"><span class="nl">Cases</span></button>
+  <button data-i="5"><span class="nl">Serviços</span></button>
+  <button data-i="6"><span class="nl">Planos</span></button>
+  <button data-i="7"><span class="nl">Próximo Passo</span></button>
+</nav>
+
+<div class="nav-arrows">
+  <button id="prevBtn" disabled>
+    <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button id="nextBtn">
+    <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+<div class="slide-count"><b id="actNum">01</b> / <span id="actTotal">08</span></div>
+
+<div class="deck" id="deck">
+
+<!-- ══ 1. ABERTURA ══ -->
+<section class="slide" id="s0">
+  <div class="neural-bg"><canvas id="neuralCanvas"></canvas></div>
+  <div class="grain"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">Ware Jurídico</div>
+    <h1 style="font-size:clamp(1.8rem,4.5vw,3.8rem)">Seu próximo cliente já<br/>tomou a decisão.<br/><span class="acc">Ele só ainda não te encontrou.</span></h1>
+    <p style="font-size:clamp(.85rem,1.1vw,.98rem);font-weight:300;color:var(--w30);margin-top:1.25rem;line-height:1.8">Nós não trabalhamos com marketing. Trabalhamos com o cérebro humano.</p>
+
+    <!-- 2 cards + stat -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.75rem;max-width:860px">
+      <div style="background:rgba(14,14,14,.85);border:1px solid var(--line);border-radius:14px;padding:1.4rem;backdrop-filter:blur(8px)">
+        <div style="width:34px;height:34px;border-radius:8px;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.45rem">Quem é a Ware</div>
+        <p style="font-size:.78rem;font-weight:300;color:var(--w30);line-height:1.65">Agência de marketing dedicada exclusivamente à advocacia, parceira da ABA (Associação Brasileira dos Advogados). Trabalhamos com escritórios de diversas áreas, sempre com foco em transformar presença digital em clientes previsíveis. <strong style="color:var(--blue)">3 anos de atuação.</strong></p>
+      </div>
+      <div style="background:rgba(14,14,14,.85);border:1px solid var(--line);border-radius:14px;padding:1.4rem;backdrop-filter:blur(8px)">
+        <div style="width:34px;height:34px;border-radius:8px;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.45rem">Crescimento dentro das regras da OAB</div>
+        <p style="font-size:.78rem;font-weight:300;color:var(--w30);line-height:1.65">Cada site, post, anúncio e perfil que produzimos passa por validação de compliance publicitário da advocacia, dentro do Provimento 205/2021 da OAB. Você cresce sem expor seu registro a risco disciplinar.</p>
+      </div>
+    </div>
+
+    <div class="scroll-hint" style="margin-top:1.5rem">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Continue
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2. O CÉREBRO ══ -->
+<section class="slide" id="s1">
+  <div class="grain"></div>
+  <div class="glow-bl"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">A ciência por trás do seu próximo cliente</div>
+    <h2>Tudo funciona com técnica.<br/>Mas técnica sem entender<br/>o <span class="acc">cérebro humano</span> não converte.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;margin-top:2rem;align-items:center" class="brain-layout">
+      <div id="brainTriggers" style="display:flex;flex-direction:column;gap:1.1rem">
+        <div class="trigger-card" id="tc0">
+          <div class="trigger-num">01</div>
+          <div>
+            <div class="trigger-title">Urgência emocional</div>
+            <div class="trigger-desc">O cliente jurídico quase sempre chega com um problema ativo — demissão, divórcio, processo. A decisão é emocional e urgente. Quem aparece primeiro captura esse momento.</div>
+          </div>
+        </div>
+        <div class="trigger-card" id="tc1">
+          <div class="trigger-num">02</div>
+          <div>
+            <div class="trigger-title">Prova de autoridade</div>
+            <div class="trigger-desc">O cérebro busca validação social antes de qualquer decisão importante. Avaliações, presença profissional e conteúdo de qualidade ativam esse gatilho automaticamente.</div>
+          </div>
+        </div>
+        <div class="trigger-card" id="tc2">
+          <div class="trigger-num">03</div>
+          <div>
+            <div class="trigger-title">Confiança antes do contato</div>
+            <div class="trigger-desc">O cliente decide contratar antes de ligar. A primeira impressão digital é a decisão — não a reunião. Quem tem presença profissional fecha antes de falar uma palavra.</div>
+          </div>
+        </div>
+      </div>
+      <div class="brain-visual" style="display:flex;align-items:center;justify-content:center">
+        <svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="grd" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(79,126,255,.12)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
+          <circle cx="140" cy="140" r="130" fill="url(#grd)"/>
+          <circle class="bn" id="bn0" cx="140" cy="60" r="8" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:0s"/>
+          <circle class="bn" cx="220" cy="110" r="6" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:.4s"/>
+          <circle class="bn" cx="230" cy="180" r="7" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:.8s"/>
+          <circle class="bn" cx="160" cy="230" r="5" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:1.2s"/>
+          <circle class="bn" cx="80" cy="220" r="7" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:1.6s"/>
+          <circle class="bn" cx="50" cy="150" r="5" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:2s"/>
+          <circle class="bn" cx="65" cy="90" r="6" fill="rgba(79,126,255,.2)" stroke="#4F7EFF" stroke-width="1" style="animation-delay:2.4s"/>
+          <circle cx="140" cy="140" r="20" fill="rgba(79,126,255,.08)" stroke="#4F7EFF" stroke-width="1.5"/>
+          <circle cx="140" cy="140" r="20" fill="none" stroke="#4F7EFF" stroke-width="1" opacity="0" style="animation:pulseRing 2.4s ease-out infinite"/>
+          <circle cx="140" cy="140" r="20" fill="none" stroke="#4F7EFF" stroke-width="1" opacity="0" style="animation:pulseRing 2.4s ease-out infinite;animation-delay:1.2s"/>
+          <line class="bl" x1="140" y1="140" x2="140" y2="60" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3"/>
+          <line class="bl" x1="140" y1="140" x2="220" y2="110" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3" style="animation-delay:.5s"/>
+          <line class="bl" x1="140" y1="140" x2="230" y2="180" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3" style="animation-delay:1s"/>
+          <line class="bl" x1="140" y1="140" x2="160" y2="230" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3" style="animation-delay:1.5s"/>
+          <line class="bl" x1="140" y1="140" x2="80" y2="220" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3" style="animation-delay:2s"/>
+          <line class="bl" x1="140" y1="140" x2="50" y2="150" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3" style="animation-delay:2.5s"/>
+          <line class="bl" x1="140" y1="140" x2="65" y2="90" stroke="#4F7EFF" stroke-width=".8" stroke-dasharray="4 4" opacity=".3" style="animation-delay:3s"/>
+          <text x="140" y="44" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="middle">URGÊNCIA</text>
+          <text x="238" y="106" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="start">AUTORIDADE</text>
+          <text x="238" y="184" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="start">CONFIANÇA</text>
+          <text x="160" y="248" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="middle">DECISÃO</text>
+          <text x="72" y="238" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="end">BUSCA</text>
+          <text x="42" y="154" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="end">EMOÇÃO</text>
+          <text x="58" y="82" font-family="Sora,sans-serif" font-size="8" fill="rgba(79,126,255,.7)" text-anchor="end">VALIDAÇÃO</text>
+          <text x="140" y="144" font-family="Sora,sans-serif" font-size="7" fill="#4F7EFF" text-anchor="middle" font-weight="700">CLIENTE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3. O PROBLEMA REAL ══ -->
+<section class="slide" id="s2">
+  <div class="grain"></div>
+  <div class="glow-tr"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">O problema real</div>
+    <h2>O cliente já decidiu<br/>contratar um advogado.<br/><span class="acc">A questão é: qual?</span></h2>
+    <!-- Verdade inegável -->
+    <div style="margin-top:1.75rem;padding:1.1rem 1.4rem;background:var(--black-2);border:1px solid var(--blue-border);border-radius:14px;position:relative;overflow:hidden;display:flex;align-items:center;gap:1rem">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue);border-radius:2px 0 0 2px"></div>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);flex-shrink:0"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <p style="font-size:.86rem;font-weight:300;color:var(--w80);line-height:1.65"><strong style="color:var(--white);font-weight:600">A faculdade ensinou você a advogar.</strong> Mas não ensinou a ter um escritório que cresce. Marketing, captação, posicionamento — isso não vem do curso. E não é fraqueza reconhecer isso. É o que separa quem cresce de quem espera a indicação chegar.</p>
+    </div>
+    <!-- Stats grid 3 colunas -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem" class="problem-grid">
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:14px;padding:1.4rem">
+        <div style="font-family:var(--fs);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.05em;color:var(--white);line-height:1"><span class="cu" data-target="82">0</span>%</div>
+        <div style="font-size:.82rem;font-weight:300;color:var(--w30);margin-top:.4rem;line-height:1.6">dos brasileiros pesquisam o advogado no Google <strong style="color:var(--w60)">antes</strong> de entrar em contato com qualquer escritório.</div>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:14px;padding:1.4rem">
+        <div style="font-family:var(--fs);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.05em;color:var(--white);line-height:1"><span class="cu" data-target="72">0</span>%</div>
+        <div style="font-size:.82rem;font-weight:300;color:var(--w30);margin-top:.4rem;line-height:1.6">dos advogados no Brasil dependem exclusivamente de indicação — sem nenhuma estratégia digital ativa.</div>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--blue-border);border-radius:14px;padding:1.4rem" class="card-hi">
+        <div style="font-family:var(--fs);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.05em;color:var(--blue);line-height:1"><span class="cu" data-target="340">0</span>%</div>
+        <div style="font-size:.82rem;font-weight:300;color:var(--w30);margin-top:.4rem;line-height:1.6">foi o crescimento de buscas por <em>"advogado + cidade"</em> nos últimos 2 anos. O cliente mudou. A maioria dos escritórios, não.</div>
+      </div>
+    </div>
+    <!-- Dois blocos inferiores -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+      <div style="padding:1.35rem;background:var(--black-2);border:1px solid var(--blue-border);border-radius:14px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent)"></div>
+        <div style="font-family:var(--fs);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem">Janela de oportunidade</div>
+        <p style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);line-height:1.45;letter-spacing:-.02em">O mercado jurídico digital <span style="color:var(--blue)">triplicou</span> nos últimos 2 anos. A maioria dos escritórios ainda está de fora.</p>
+        <p style="font-size:.8rem;font-weight:300;color:var(--w30);margin-top:.65rem;line-height:1.65">Quem entrar agora ocupa o espaço antes que a concorrência acorde. SEO leva tempo — cada mês de atraso é um mês que o concorrente está na frente.</p>
+      </div>
+      <div style="padding:1.35rem;background:var(--black-2);border:1px solid var(--line);border-radius:14px">
+        <div style="font-family:var(--fs);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--w30);margin-bottom:.75rem">O que acontece sem presença digital</div>
+        <div style="display:flex;flex-direction:column;gap:.55rem">
+          <div style="display:flex;align-items:flex-start;gap:.65rem;font-size:.82rem;font-weight:300;color:var(--w60);line-height:1.5"><span style="color:var(--blue);flex-shrink:0;margin-top:.1rem">→</span>O cliente pesquisa, não te encontra e liga para o concorrente que aparece primeiro.</div>
+          <div style="display:flex;align-items:flex-start;gap:.65rem;font-size:.82rem;font-weight:300;color:var(--w60);line-height:1.5"><span style="color:var(--blue);flex-shrink:0;margin-top:.1rem">→</span>Você depende 100% de indicação — um canal que não escala e não é previsível.</div>
+          <div style="display:flex;align-items:flex-start;gap:.65rem;font-size:.82rem;font-weight:300;color:var(--w60);line-height:1.5"><span style="color:var(--blue);flex-shrink:0;margin-top:.1rem">→</span>Meses fracos continuam fracos. Não existe alavanca para crescer sozinho.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4. DIAGNÓSTICO ══ -->
+<section class="slide" id="s3">
+  <div class="grain"></div>
+  <div class="glow-tr"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">Antes de cada projeto</div>
+    <h2>Cada cliente começa com<br/><span class="acc">dados,</span> não com achismo.</h2>
+    <div style="display:inline-flex;align-items:center;gap:.65rem;margin-top:.85rem;margin-bottom:1.75rem;padding:.45rem .95rem;background:var(--black-2);border:1px solid var(--blue-border);border-radius:100px">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span style="font-size:.72rem;font-weight:400;color:var(--w60)">Agência <strong style="color:var(--white)">especializada exclusivamente no mercado jurídico</strong> — estratégias dentro das normas da OAB</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem" class="diag-grid">
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:14px;padding:1.35rem">
+        <div style="font-family:var(--fs);font-size:1.7rem;font-weight:800;color:var(--blue);opacity:.2;line-height:1;margin-bottom:.5rem">01</div>
+        <div style="font-family:var(--fs);font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Análise de mercado</div>
+        <div style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.65">Mapeamos quantos escritórios da especialidade e cidade do cliente têm presença digital estruturada — e o que está faltando.</div>
+        <div style="margin-top:.85rem;display:flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5 3v2l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Em cada projeto
+        </div>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:14px;padding:1.35rem">
+        <div style="font-family:var(--fs);font-size:1.7rem;font-weight:800;color:var(--blue);opacity:.2;line-height:1;margin-bottom:.5rem">02</div>
+        <div style="font-family:var(--fs);font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Análise da concorrência</div>
+        <div style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.65">Identificamos quem aparece antes do cliente no Google e no Maps — e o que os concorrentes fazem que ele ainda não faz.</div>
+        <div style="margin-top:.85rem;display:flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5 3v2l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Em cada projeto
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(79,126,255,.07),transparent 60%);border:1px solid var(--blue-border);border-radius:14px;padding:1.35rem">
+        <div style="font-family:var(--fs);font-size:1.7rem;font-weight:800;color:var(--blue);opacity:.35;line-height:1;margin-bottom:.5rem">03</div>
+        <div style="font-family:var(--fs);font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Mapeamento de oportunidade</div>
+        <div style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.65">Identificamos os termos que clientes buscam na cidade do advogado — e onde existe espaço para aparecer primeiro no Google.</div>
+        <div style="margin-top:.85rem;display:flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5 3v2l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Em cada projeto
+        </div>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:14px;padding:1.35rem">
+        <div style="font-family:var(--fs);font-size:1.7rem;font-weight:800;color:var(--blue);opacity:.2;line-height:1;margin-bottom:.5rem">04</div>
+        <div style="font-family:var(--fs);font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Plano personalizado</div>
+        <div style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.65">Com base nas etapas anteriores, estruturamos o que faz mais sentido para o momento do escritório — não um pacote genérico.</div>
+        <div style="margin-top:.85rem;display:flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5 3v2l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Em cada projeto
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5. CASES ══ -->
+<section class="slide" id="s4">
+  <div class="grain"></div>
+  <div class="glow-bl"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">Clientes reais · Resultados reais</div>
+    <h2>Aqui está o que já<br/><span class="acc">construímos</span> para outros advogados.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem" class="cases-grid">
+      <!-- PECLY -->
+      <div class="card card-hi" style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.1rem">
+          <div>
+            <span style="font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.5rem">Direito Empresarial</span>
+            <div style="font-family:var(--fs);font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:-.02em">Pecly Associados</div>
+            <div style="font-size:.75rem;color:var(--w30);margin-top:.15rem">pecly.com.br</div>
+          </div>
+          <div style="display:flex;gap:.4rem;flex-shrink:0">
+            <a href="https://pecly.com.br/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--black-3);border:1px solid var(--line);color:var(--w30);text-decoration:none;transition:all .2s">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/peclyassociados/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--black-3);border:1px solid var(--line);color:var(--w30);text-decoration:none;transition:all .2s">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid var(--blue-border);margin-bottom:1.1rem">
+          <div style="padding:.35rem .7rem;background:var(--black-3);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.35rem">
+            <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+            <span style="font-size:.6rem;color:var(--w30);margin-left:.3rem">pecly.com.br</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/joaocassianowork/ware-new/main/assets/pecly.webp" alt="Site Pecly Associados" style="width:100%;height:185px;object-fit:cover;object-position:top;display:block"/>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:auto">
+          <div style="text-align:center;padding:.75rem .4rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">
+            <div style="font-family:var(--fs);font-size:1.35rem;font-weight:800;color:var(--blue);letter-spacing:-.04em;line-height:1">90%+</div>
+            <div style="font-size:.65rem;color:var(--w30);margin-top:.2rem;line-height:1.4">aumento de visibilidade</div>
+          </div>
+          <div style="text-align:center;padding:.75rem .4rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">
+            <div style="font-family:var(--fs);font-size:1.35rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1">40k</div>
+            <div style="font-size:.65rem;color:var(--w30);margin-top:.2rem;line-height:1.4">alcance/mês nas redes</div>
+          </div>
+          <div style="text-align:center;padding:.75rem .4rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">
+            <div style="font-family:var(--fs);font-size:1.35rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1">2°</div>
+            <div style="font-size:.65rem;color:var(--w30);margin-top:.2rem;line-height:1.4">mês de contrato pago</div>
+          </div>
+        </div>
+      </div>
+      <!-- PIFFER -->
+      <div class="card" style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.1rem">
+          <div>
+            <span style="font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.5rem">Advocacia · Araçatuba, SP</span>
+            <div style="font-family:var(--fs);font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:-.02em">Silveira Piffer Advogados</div>
+            <div style="font-size:.75rem;color:var(--w30);margin-top:.15rem">silveirapiffer.adv.br</div>
+          </div>
+          <div style="display:flex;gap:.4rem;flex-shrink:0">
+            <a href="https://silveirapiffer.adv.br/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--black-3);border:1px solid var(--line);color:var(--w30);text-decoration:none;transition:all .2s">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/silveirapiffer.adv/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--black-3);border:1px solid var(--line);color:var(--w30);text-decoration:none;transition:all .2s">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid var(--line);margin-bottom:1.1rem">
+          <div style="padding:.35rem .7rem;background:var(--black-3);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.35rem">
+            <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+            <span style="font-size:.6rem;color:var(--w30);margin-left:.3rem">silveirapiffer.adv.br</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/joaocassianowork/ware-new/main/assets/piffer.webp" alt="Site Silveira Piffer" style="width:100%;height:185px;object-fit:cover;object-position:top;display:block"/>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:auto">
+          <div style="text-align:center;padding:.75rem .4rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">
+            <div style="font-family:var(--fs);font-size:1.35rem;font-weight:800;color:var(--blue);letter-spacing:-.04em;line-height:1"><span class="cu" data-target="30">0</span>%</div>
+            <div style="font-size:.65rem;color:var(--w30);margin-top:.2rem;line-height:1.4">aumento no faturamento</div>
+          </div>
+          <div style="text-align:center;padding:.75rem .4rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">
+            <div style="font-family:var(--fs);font-size:1.35rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1"><span class="cu" data-target="3">0</span>x</div>
+            <div style="font-size:.65rem;color:var(--w30);margin-top:.2rem;line-height:1.4">mais alcance digital</div>
+          </div>
+          <div style="text-align:center;padding:.75rem .4rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">
+            <div style="font-family:var(--fs);font-size:1.35rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1">3°</div>
+            <div style="font-size:.65rem;color:var(--w30);margin-top:.2rem;line-height:1.4">mês com resultados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6. SERVIÇOS ══ -->
+<section class="slide" id="s5">
+  <div class="grain"></div>
+  <div class="glow-tr"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">Ato 4 · A proposta</div>
+    <h2>O que a Ware<br/>estrutura para <span class="acc">você.</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem">
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color .3s">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent)"></div>
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.4rem">Site institucional</div>
+        <p style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.7">Pensado para conversão, não só para existir. Estrutura, SEO local e linguagem que fala com quem busca um advogado na sua área de atuação e na sua cidade.</p>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color .3s">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(79,126,255,.5),transparent)"></div>
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.4rem">Tráfego pago (Google e Meta)</div>
+        <p style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.7">Presença paga dentro das normas da OAB, para você aparecer enquanto sua autoridade orgânica está sendo construída.</p>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--line);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color .3s">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(79,126,255,.4),transparent)"></div>
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z"/><path d="M12 18h.01"/></svg>
+        </div>
+        <div style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.4rem">Gestão de redes sociais</div>
+        <p style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.7">Conteúdo jurídico estratégico, como o que já funciona para outros nomes desse mercado, mas com a sua marca e o seu posicionamento.</p>
+      </div>
+      <div style="background:var(--black-2);border:1px solid var(--blue-border);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color .3s">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),rgba(79,126,255,.3))"></div>
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div style="font-family:var(--fs);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.4rem">Google Meu Negócio</div>
+        <p style="font-size:.8rem;font-weight:300;color:var(--w30);line-height:1.7">Perfil otimizado para aparecer e converter exatamente na busca que mapeamos nesta apresentação.</p>
+      </div>
+    </div>
+    <div style="margin-top:1rem;padding:1.1rem 1.4rem;background:var(--black-3);border:1px solid var(--line);border-radius:12px;font-size:.8rem;font-weight:300;color:var(--w60);line-height:1.7">
+      Tudo isso com <strong style="color:var(--white)">painel de controle de leads</strong>, scripts por etapa de atendimento, relatórios mensais, atualizações jurídicas e consultoria estratégica contínua.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7. PLANOS ══ -->
+<section class="slide" id="s6">
+  <div class="grain"></div>
+  <div class="glow-tr"></div>
+  <div class="slide-inner">
+    <div class="eyebrow">Investimento</div>
+    <h2>Planos pensados<br/>para o seu <span class="acc">momento.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;margin-top:1.75rem" class="pricing-grid">
+      <div class="price-card">
+        <div style="font-family:var(--fs);font-size:1rem;font-weight:800;color:var(--white);margin-bottom:.3rem;letter-spacing:-.02em">Essencial</div>
+        <div style="font-size:.75rem;color:var(--w30);margin-bottom:1.35rem">Foco em visibilidade local</div>
+        <ul class="pf-list">
+          <li>Google Meu Negócio otimizado (SEO local)</li>
+          <li>Gestão de redes sociais (feed + stories)</li>
+          <li>Relatórios mensais de performance</li>
+        </ul>
+        <div style="height:1px;background:var(--line);margin:1.35rem 0"></div>
+        <div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--w30);margin-bottom:.35rem">Investimento mensal</div>
+        <div style="font-family:var(--fs);font-size:1.75rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1">R$ 2.000<span style="font-size:.9rem;font-weight:300;color:var(--w30)">/mês</span></div>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Mais popular</div>
+        <div style="font-family:var(--fs);font-size:1rem;font-weight:800;color:var(--white);margin-bottom:.3rem;letter-spacing:-.02em">Crescimento</div>
+        <div style="font-size:.75rem;color:var(--w30);margin-bottom:1.35rem">Parceria estratégica completa</div>
+        <ul class="pf-list">
+          <li>Tudo do plano Essencial</li>
+          <li>Site institucional completo</li>
+          <li>Painel de controle de leads</li>
+          <li>Consultoria estratégica mensal</li>
+        </ul>
+        <div style="height:1px;background:var(--line);margin:1.35rem 0"></div>
+        <div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--w30);margin-bottom:.35rem">Investimento mensal</div>
+        <div style="font-family:var(--fs);font-size:1.75rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1">R$ 2.500<span style="font-size:.9rem;font-weight:300;color:var(--w30)">/mês</span></div>
+      </div>
+      <div class="price-card">
+        <div style="font-family:var(--fs);font-size:1rem;font-weight:800;color:var(--white);margin-bottom:.3rem;letter-spacing:-.02em">Autoridade</div>
+        <div style="font-size:.75rem;color:var(--w30);margin-bottom:1.35rem">Foco em liderança de mercado</div>
+        <ul class="pf-list">
+          <li>Tudo do plano Crescimento</li>
+          <li>Tráfego pago (Google e Meta)</li>
+          <li>Relatório de performance de campanhas</li>
+        </ul>
+        <div style="height:1px;background:var(--line);margin:1.35rem 0"></div>
+        <div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--w30);margin-bottom:.35rem">Investimento mensal</div>
+        <div style="font-family:var(--fs);font-size:1.75rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1">R$ 3.000<span style="font-size:.9rem;font-weight:300;color:var(--w30)">/mês</span></div>
+      </div>
+    </div>
+    <div style="font-size:.78rem;font-weight:300;color:var(--w30);line-height:1.65;margin-top:1.25rem;padding:.95rem 1.1rem;background:var(--black-3);border-radius:10px;border:1px solid var(--line)">Vigência mínima de 3 meses — tempo necessário para site, conteúdo, tráfego e Google Meu Negócio começarem a trabalhar juntos. O escopo final é ajustado na consultoria estratégica.</div>
+    <div style="margin-top:1.35rem">
+      <div style="font-family:var(--fs);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w30);margin-bottom:.9rem">Ou comece por uma frente específica</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem">
+        <div style="background:var(--black-2);border:1px solid var(--line);border-radius:12px;padding:1.1rem">
+          <div style="font-family:var(--fs);font-size:.82rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Site institucional</div>
+          <div style="font-family:var(--fs);font-size:.95rem;font-weight:800;color:var(--blue)">R$ 2.500 <span style="font-size:.72rem;font-weight:300;color:var(--w30)">único</span></div>
+          <div style="font-size:.72rem;color:var(--w30);margin:.2rem 0 .5rem">+ R$ 200<span style="font-size:.65rem">/mês</span> manutenção</div>
+          <p style="font-size:.76rem;color:var(--w30);line-height:1.5">Site completo com SEO, analytics e hospedagem.</p>
+        </div>
+        <div style="background:var(--black-2);border:1px solid var(--line);border-radius:12px;padding:1.1rem">
+          <div style="font-family:var(--fs);font-size:.82rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Redes sociais</div>
+          <div style="font-family:var(--fs);font-size:.95rem;font-weight:800;color:var(--blue)">R$ 1.500<span style="font-size:.72rem;font-weight:300;color:var(--w30)">/mês</span></div>
+          <div style="height:.85rem"></div>
+          <p style="font-size:.76rem;color:var(--w30);line-height:1.5">12 posts e 15 stories por mês com estratégia jurídica.</p>
+        </div>
+        <div style="background:var(--black-2);border:1px solid var(--line);border-radius:12px;padding:1.1rem">
+          <div style="font-family:var(--fs);font-size:.82rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Google Meu Negócio</div>
+          <div style="font-family:var(--fs);font-size:.95rem;font-weight:800;color:var(--blue)">R$ 500 <span style="font-size:.72rem;font-weight:300;color:var(--w30)">único</span></div>
+          <div style="height:.85rem"></div>
+          <p style="font-size:.76rem;color:var(--w30);line-height:1.5">Criação e otimização completa do perfil local.</p>
+        </div>
+        <div style="background:var(--black-2);border:1px solid var(--line);border-radius:12px;padding:1.1rem">
+          <div style="font-family:var(--fs);font-size:.82rem;font-weight:700;color:var(--white);margin-bottom:.35rem">Tráfego pago</div>
+          <div style="font-family:var(--fs);font-size:.95rem;font-weight:800;color:var(--blue)">R$ 1.500<span style="font-size:.72rem;font-weight:300;color:var(--w30)">/mês</span></div>
+          <div style="height:.85rem"></div>
+          <p style="font-size:.76rem;color:var(--w30);line-height:1.5">Gestão de campanhas Google e Meta dentro das normas da OAB.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 8. FECHAMENTO ══ -->
+<section class="slide" id="s7" style="justify-content:center;text-align:center">
+  <div class="neural-bg"><canvas id="neuralCanvas2"></canvas></div>
+  <div class="grain"></div>
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;max-width:700px">
+
+    <div class="eyebrow" style="justify-content:center">Ware Jurídico</div>
+
+    <h2 style="font-size:clamp(1.8rem,4.5vw,3.8rem);margin-top:.5rem">
+      Você pesquisou.<br/>Você analisou.<br/><span class="acc">Você está aqui.</span>
+    </h2>
+
+    <p style="font-size:clamp(.9rem,1.2vw,1.05rem);font-weight:300;color:var(--w60);line-height:1.9;max-width:48ch;margin-top:1.75rem">
+      Assim como o seu cliente chega até você depois de pesquisar, avaliar e confiar — você chegou até a Ware.<br/>
+      O processo que apresentamos não é teoria.<br/>
+      <strong style="color:var(--white);font-weight:500">É o que está acontecendo com você agora.</strong>
+    </p>
+
+    <!-- Linha de contato discreta -->
+    <div style="display:flex;align-items:center;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap;justify-content:center">
+      <a href="https://wa.me/5518996745458?text=Ol%C3%A1!%20Assisti%20a%20apresenta%C3%A7%C3%A3o%20da%20Ware." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fb);font-size:.85rem;font-weight:500;color:var(--w60);text-decoration:none;transition:color .2s">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="color:var(--blue)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        +55 18 99674-5458
+      </a>
+      <div style="width:1px;height:14px;background:var(--line)"></div>
+      <a href="mailto:contato@warejuridico.com.br" style="font-family:var(--fb);font-size:.85rem;font-weight:500;color:var(--w60);text-decoration:none;transition:color .2s">contato@warejuridico.com.br</a>
+      <div style="width:1px;height:14px;background:var(--line)"></div>
+      <a href="https://warejuridico.com.br" target="_blank" rel="noopener" style="font-family:var(--fb);font-size:.85rem;font-weight:500;color:var(--w60);text-decoration:none;transition:color .2s">warejuridico.com.br</a>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = Array.from(document.querySelectorAll('.slide'));
+const dots = Array.from(document.querySelectorAll('.navdots button'));
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const actNum = document.getElementById('actNum');
+document.getElementById('actTotal').textContent = String(slides.length).padStart(2,'0');
+let current = 0;
+const counted = new Set();
+
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const i = slides.indexOf(e.target);
+      current = i;
+      dots.forEach(d=>d.classList.remove('active'));
+      dots[i]?.classList.add('active');
+      actNum.textContent = String(i+1).padStart(2,'0');
+      prevBtn.disabled = i===0;
+      nextBtn.disabled = i===slides.length-1;
+      triggerAnims(i);
+    }
+  });
+},{threshold:0.4});
+slides.forEach(s=>obs.observe(s));
+
+dots.forEach((d,i)=>d.addEventListener('click',()=>slides[i].scrollIntoView({behavior:'smooth'})));
+prevBtn.addEventListener('click',()=>{if(current>0)slides[current-1].scrollIntoView({behavior:'smooth'})});
+nextBtn.addEventListener('click',()=>{if(current<slides.length-1)slides[current+1].scrollIntoView({behavior:'smooth'})});
+document.addEventListener('keydown',e=>{
+  if(['ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();if(current<slides.length-1)slides[current+1].scrollIntoView({behavior:'smooth'});}
+  if(['ArrowUp','PageUp'].includes(e.key)){e.preventDefault();if(current>0)slides[current-1].scrollIntoView({behavior:'smooth'});}
+});
+
+function countUp(el){
+  if(counted.has(el))return;
+  counted.add(el);
+  const target=parseInt(el.dataset.target);
+  const start=performance.now();
+  const dur=1400;
+  (function step(now){
+    const p=Math.min((now-start)/dur,1);
+    el.textContent=Math.floor((1-Math.pow(1-p,3))*target);
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  })(start);
+}
+
+function triggerAnims(i){
+  if(i===1){
+    const cards=[document.getElementById('tc0'),document.getElementById('tc1'),document.getElementById('tc2')];
+    cards.forEach((c,j)=>{c.classList.remove('lit');setTimeout(()=>c?.classList.add('lit'),j*580);});
+  }
+  if(i===2) document.querySelectorAll('#s2 .cu').forEach(el=>countUp(el));
+  if(i===4) document.querySelectorAll('#s4 .cu').forEach(el=>countUp(el));
+  if(i===6){
+    [0,1,2,3].forEach(j=>{
+      const el=document.getElementById('tl'+j);
+      if(el){el.classList.remove('lit');setTimeout(()=>el.classList.add('lit'),j*380+150);}
+    });
+  }
+}
+
+// Canvas neural
+(function(){
+  const canvas=document.getElementById('neuralCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,nodes=[];
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  for(let i=0;i<36;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,r:Math.random()*2+.8});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let a=0;a<nodes.length;a++)for(let b=a+1;b<nodes.length;b++){
+      const dx=nodes[a].x-nodes[b].x,dy=nodes[a].y-nodes[b].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(79,126,255,${(1-d/130)*.1})`;ctx.lineWidth=.6;ctx.moveTo(nodes[a].x,nodes[a].y);ctx.lineTo(nodes[b].x,nodes[b].y);ctx.stroke();}
+    }
+    nodes.forEach(n=>{ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle='rgba(79,126,255,.3)';ctx.fill();n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;});
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Versões transformação
+function switchVer(i){
+  ['verA','verU','verC'].forEach((id,j)=>{
+    const el=document.getElementById(id);
+    if(el)el.style.display=j===i?'block':'none';
+  });
+  ['vbA','vbU','vbC'].forEach((id,j)=>{
+    const el=document.getElementById(id);
+    if(el)el.classList.toggle('active',j===i);
+  });
+}
+
+
+// Canvas neural — slide final
+(function(){
+  const canvas=document.getElementById('neuralCanvas2');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,nodes=[];
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  for(let i=0;i<28;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,r:Math.random()*1.8+.6});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let a=0;a<nodes.length;a++)for(let b=a+1;b<nodes.length;b++){
+      const dx=nodes[a].x-nodes[b].x,dy=nodes[a].y-nodes[b].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120){ctx.beginPath();ctx.strokeStyle=`rgba(79,126,255,${(1-d/120)*.08})`;ctx.lineWidth=.5;ctx.moveTo(nodes[a].x,nodes[a].y);ctx.lineTo(nodes[b].x,nodes[b].y);ctx.stroke();}
+    }
+    nodes.forEach(n=>{ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle='rgba(79,126,255,.22)';ctx.fill();n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;});
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Init
+dots[0]?.classList.add('active');
+prevBtn.disabled=true;
+</script>
+</body>
+</html>

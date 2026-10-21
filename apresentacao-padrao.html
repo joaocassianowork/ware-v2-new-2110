@@ -1,0 +1,1326 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ware Jurídico · Apresentação Comercial</title>
+  <link rel="preload" href="/assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmsans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style id="ware-fonts">
+@font-face{font-family:'Sora';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/sora-300.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/sora-400.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/sora-600.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/sora-700.woff2') format('woff2')}@font-face{font-family:'Sora';font-style:normal;font-weight:800;font-display:swap;src:url('/assets/fonts/sora-800.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/dmsans-300.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/dmsans-400.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/dmsans-500.woff2') format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/dmsans-600.woff2') format('woff2')}
+  </style>
+<style>
+  :root{
+    --black:#080808;
+    --white:#f5f2ee;
+    --blue:#4F7EFF;
+    --blue-soft:rgba(79,126,255,.14);
+    --line:rgba(245,242,238,.10);
+    --muted:rgba(245,242,238,.56);
+    --muted2:rgba(245,242,238,.34);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html,body{ height:100%; }
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+
+  /* ambient glow */
+  body::before{
+    content:'';
+    position:fixed; inset:0;
+    background:
+      radial-gradient(900px 600px at 85% 8%, var(--blue-soft), transparent 60%),
+      radial-gradient(700px 500px at 5% 95%, rgba(79,126,255,.08), transparent 60%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* geometric backdrop */
+  .bg-deco{
+    position:fixed; inset:0;
+    z-index:0;
+    pointer-events:none;
+    width:100%; height:100%;
+  }
+
+  .bg-deco svg{ width:100%; height:100%; display:block; }
+
+  .deck{
+    position:relative;
+    height:100vh; height:100dvh;
+    overflow-y:auto;
+    scroll-behavior:smooth;
+    z-index:1;
+  }
+
+  .deck::-webkit-scrollbar{ display:none; }
+
+  .slide{
+    min-height:100vh; min-height:100dvh;
+    display:flex;
+    align-items:center;
+    padding: clamp(28px, 6vw, 96px);
+    padding-top: clamp(72px, 10vh, 120px);
+    padding-bottom: clamp(72px, 10vh, 120px);
+    position:relative;
+    border-bottom:1px solid var(--line);
+  }
+
+  .slide-inner{
+    max-width:1180px;
+    margin:0 auto;
+    width:100%;
+    opacity:0;
+    transform:translateY(28px);
+    animation: revealIn .8s ease forwards;
+    animation-delay:.05s;
+  }
+
+  @keyframes revealIn{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .eyebrow{
+    font-family:'Sora', sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom: clamp(20px, 4vw, 36px);
+  }
+
+  .eyebrow::before{
+    content:'';
+    width:28px; height:1px;
+    background:var(--blue);
+    display:block;
+  }
+
+  h1, h2, h3{
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+
+  h1{ font-size: clamp(2.1rem, 6.4vw, 4.4rem); max-width: 16ch; }
+  h2{ font-size: clamp(1.9rem, 5.4vw, 3.6rem); max-width: 18ch; }
+  h3{ font-size: clamp(1.4rem, 3.2vw, 2rem); }
+
+  p{ line-height:1.65; }
+
+  .lead{
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color:var(--muted);
+    max-width: 56ch;
+    margin-top: clamp(20px, 3vw, 28px);
+  }
+
+  .scroll-hint{
+    margin-top: clamp(40px, 7vw, 80px);
+    font-family:'Sora', sans-serif;
+    font-size:.75rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--muted2);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .scroll-hint svg{ animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
+
+  /* ---------- Página indicator ---------- */
+  .page-indicator{
+    position:fixed;
+    top: clamp(20px, 3vw, 36px);
+    left: clamp(24px, 6vw, 96px);
+    font-family:'Sora', sans-serif;
+    font-size:.7rem;
+    letter-spacing:.28em;
+    color:var(--muted2);
+    z-index:5;
+    text-transform:uppercase;
+  }
+
+  .page-indicator b{ color:var(--white); }
+
+  .wordmark{
+    position:fixed;
+    top: clamp(20px, 3vw, 36px);
+    right: clamp(24px, 6vw, 96px);
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:.85rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--white);
+    z-index:5;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+
+  .wordmark span{ color:var(--blue); }
+
+  /* ---------- Nav dots ---------- */
+  .navdots{
+    position:fixed;
+    right: clamp(20px, 4vw, 40px);
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    z-index:5;
+  }
+
+  .navdots button{
+    width:10px; height:10px;
+    border-radius:50%;
+    border:1px solid var(--muted2);
+    background:transparent;
+    cursor:pointer;
+    padding:0;
+    position:relative;
+    transition: border-color .3s, background .3s, transform .3s;
+  }
+
+  .navdots button .navlabel{
+    position:absolute;
+    right:24px; top:50%;
+    transform:translateY(-50%);
+    font-family:'Sora', sans-serif;
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    white-space:nowrap;
+    opacity:0;
+    transition:opacity .25s;
+    pointer-events:none;
+  }
+
+  .navdots button:hover .navlabel{ opacity:1; }
+
+  .navdots button.active{
+    background:var(--blue);
+    border-color:var(--blue);
+    transform:scale(1.3);
+  }
+
+  /* ---------- Arrows ---------- */
+  .arrows{
+    position:fixed;
+    bottom: clamp(16px, 4vw, 40px);
+    right: clamp(16px, 4vw, 40px);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:5;
+  }
+
+  .arrows button{
+    width:40px; height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:rgba(8,8,8,.4);
+    backdrop-filter: blur(6px);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition: border-color .25s, background .25s;
+  }
+
+  .arrows button:hover{ border-color:var(--blue); background:var(--blue-soft); }
+  .arrows button:disabled{ opacity:.25; cursor:default; }
+
+  /* ---------- Intro cards (Quem é a Ware / OAB) ---------- */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap: clamp(16px, 2.4vw, 24px);
+    margin-top: clamp(32px, 5vw, 52px);
+  }
+
+  .intro-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding: clamp(22px, 3.4vw, 34px);
+    transition: border-color .25s;
+  }
+
+  .intro-card:hover{ border-color:var(--blue); }
+
+  .intro-card .icard-icon{
+    width:40px; height:40px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--blue);
+    margin-bottom: clamp(16px, 2.4vw, 22px);
+  }
+
+  .intro-card h3{ font-size: clamp(1.15rem, 2.2vw, 1.5rem); margin-bottom:10px; }
+  .intro-card p{ color:var(--muted); font-size:.94rem; }
+
+  /* ---------- Social proof (clientes) ---------- */
+  .clients-block{
+    margin-top: clamp(28px, 4vw, 44px);
+    padding-top: clamp(24px, 3.6vw, 36px);
+    border-top:1px solid var(--line);
+  }
+
+  .clients-title{
+    font-family:'Sora', sans-serif;
+    font-size:.78rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted2);
+    margin-bottom: clamp(14px, 2vw, 20px);
+  }
+
+  .clients-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  .client-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    padding:10px 20px 10px 14px;
+    text-decoration:none;
+    color:var(--white);
+    transition: border-color .25s, background .25s;
+  }
+
+  .client-chip:hover{ border-color:var(--blue); background:var(--blue-soft); }
+
+  .client-chip .ci-icon{
+    width:28px; height:28px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--blue);
+    flex-shrink:0;
+  }
+
+  .client-chip .ci-text{ display:flex; flex-direction:column; line-height:1.2; }
+  .client-chip .ci-name{ font-family:'Sora', sans-serif; font-weight:600; font-size:.86rem; }
+  .client-chip .ci-handle{ font-size:.74rem; color:var(--muted); }
+
+  /* ---------- Stats grid (diagnóstico) ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    margin-top: clamp(28px, 4vw, 44px);
+  }
+
+  .stat{
+    background:rgba(245,242,238,.02);
+    padding: clamp(20px, 3vw, 32px) clamp(16px, 2.4vw, 24px);
+  }
+
+  .stat .num{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+    line-height:1;
+    letter-spacing:-.02em;
+  }
+
+  .stat .num .accent{ color:var(--blue); }
+
+  .stat .label{
+    margin-top:10px;
+    font-size:.88rem;
+    color:var(--muted);
+    line-height:1.45;
+  }
+
+  .stat .src{
+    margin-top:8px;
+    font-size:.72rem;
+    color:var(--muted2);
+  }
+
+  /* ---------- Gap bars ---------- */
+  .gap-block{
+    margin-top: clamp(32px, 5vw, 52px);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding: clamp(20px, 3vw, 32px);
+  }
+
+  .gap-row{ margin-bottom:20px; }
+  .gap-row:last-child{ margin-bottom:0; }
+
+  .gap-row .gap-top{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Sora', sans-serif;
+    font-size:.85rem;
+    margin-bottom:8px;
+    gap:16px;
+  }
+
+  .gap-row .gap-top .gname{ font-weight:700; }
+  .gap-row .gap-top .gval{ color:var(--muted); font-weight:400; text-align:right; }
+
+  .gap-track{
+    height:8px;
+    border-radius:100px;
+    background:rgba(245,242,238,.06);
+    overflow:hidden;
+  }
+
+  .gap-fill{
+    height:100%;
+    border-radius:100px;
+    background:var(--blue);
+    width:0%;
+    transition: width 1.4s cubic-bezier(.16,1,.3,1);
+  }
+
+  .gap-fill.f1{ animation: growF1 1.4s cubic-bezier(.16,1,.3,1) forwards; animation-delay:.4s; }
+  .gap-fill.f2{ animation: growF2 1.4s cubic-bezier(.16,1,.3,1) forwards; animation-delay:.4s; }
+
+  @keyframes growF1{ to{ width:78%; } }
+  @keyframes growF2{ to{ width:60%; } }
+
+  .gap-caption{
+    margin-top:18px;
+    font-size:.88rem;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    padding-top:16px;
+  }
+
+  /* ---------- Source cards ---------- */
+  .comp-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap: clamp(16px, 2.4vw, 28px);
+    margin-top: clamp(32px, 5vw, 52px);
+  }
+
+  .comp-col-title{
+    font-family:'Sora', sans-serif;
+    font-size:.78rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted2);
+    margin-bottom:14px;
+  }
+
+  .comp-card{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:12px;
+    transition: border-color .25s;
+  }
+
+  .comp-card:hover{ border-color:var(--blue); }
+
+  .comp-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:10px;
+  }
+
+  .comp-name{
+    font-family:'Sora', sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+  }
+
+  .comp-rating{
+    font-size:.8rem;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+
+  .comp-card p{
+    font-size:.88rem;
+    color:var(--muted);
+    line-height:1.55;
+  }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+
+  .tag{
+    font-size:.74rem;
+    padding:5px 11px;
+    border-radius:100px;
+    border:1px solid var(--line);
+    color:var(--muted);
+  }
+
+  .tag.strong{
+    border-color:var(--blue);
+    color:var(--blue);
+    background:var(--blue-soft);
+  }
+
+  .tag.ads{
+    background:var(--blue);
+    color:var(--black);
+    border-color:var(--blue);
+    font-weight:700;
+  }
+
+  /* ---------- Realidades ---------- */
+  .reality-list{
+    margin-top: clamp(32px, 5vw, 52px);
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+
+  .reality{
+    display:grid;
+    grid-template-columns: 110px 1fr;
+    gap: clamp(20px, 3vw, 40px);
+    padding: clamp(24px, 3.5vw, 36px) 0;
+    border-top:1px solid var(--line);
+  }
+
+  .reality:last-child{ border-bottom:1px solid var(--line); }
+
+  .reality .rnum{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color:var(--blue);
+    line-height:1;
+  }
+
+  .reality h3{ margin-bottom:10px; }
+
+  .reality p{ color:var(--muted); max-width:62ch; }
+
+  /* ---------- Espelho pillars ---------- */
+  .pillars{
+    margin-top: clamp(32px, 5vw, 52px);
+    display:flex;
+    flex-direction:column;
+    gap: clamp(16px, 2.4vw, 24px);
+  }
+
+  .pillar{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding: clamp(22px, 3.4vw, 34px);
+    transition: border-color .25s;
+  }
+
+  .pillar:hover{ border-color:var(--blue); }
+
+  .pillar .ptitle{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .pillar .ptitle .from{ color:var(--muted2); }
+  .pillar .ptitle .arrow{ color:var(--blue); font-weight:400; }
+  .pillar .ptitle .to{ color:var(--white); }
+
+  .pillar p{ color:var(--muted); max-width:68ch; }
+
+  /* ---------- Timeline (ciclo de implementação) ---------- */
+  .timeline{
+    margin-top: clamp(36px, 6vw, 60px);
+  }
+
+  .timeline-track{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: clamp(20px, 2.4vw, 28px);
+  }
+
+  .timeline-track::before{
+    content:'';
+    position:absolute;
+    top:7px; left:0; right:0;
+    height:2px;
+    background:var(--line);
+  }
+
+  .tl-step{
+    position:relative;
+    padding-top:34px;
+  }
+
+  .tl-step::before{
+    content:'';
+    position:absolute;
+    top:0; left:0;
+    width:14px; height:14px;
+    border-radius:50%;
+    background:var(--black);
+    border:2px solid var(--blue);
+  }
+
+  .tl-tag{
+    font-family:'Sora', sans-serif;
+    font-size:.7rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:10px;
+  }
+
+  .tl-step h3{ font-size: clamp(1.05rem, 2vw, 1.3rem); margin-bottom:8px; }
+  .tl-step p{ font-size:.88rem; color:var(--muted); }
+
+  /* ---------- Proposta services ---------- */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: clamp(14px, 2vw, 20px);
+    margin-top: clamp(28px, 4vw, 44px);
+  }
+
+  .service-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding: clamp(18px, 2.6vw, 26px);
+    transition: border-color .25s;
+  }
+
+  .service-card:hover{ border-color:var(--blue); }
+
+  .service-card h3{ font-size: clamp(1.05rem, 2vw, 1.25rem); margin-bottom:8px; }
+  .service-card p{ color:var(--muted); font-size:.92rem; }
+
+  .diff-line{
+    margin-top: clamp(20px, 3vw, 28px);
+    padding-top: clamp(20px, 3vw, 28px);
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:.95rem;
+    max-width:72ch;
+  }
+
+  .diff-line b{ color:var(--white); }
+
+  /* ---------- Pricing ---------- */
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: clamp(14px, 2vw, 20px);
+    margin-top: clamp(32px, 4.5vw, 48px);
+  }
+
+  .price-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding: clamp(22px, 3vw, 30px);
+    display:flex;
+    flex-direction:column;
+  }
+
+  .price-card.featured{
+    border-color:var(--blue);
+    background:var(--blue-soft);
+  }
+
+  .price-name{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  }
+
+  .price-tag{
+    font-size:.78rem;
+    color:var(--blue);
+    margin-top:4px;
+    margin-bottom: clamp(16px, 2vw, 22px);
+  }
+
+  .price-features{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom: clamp(20px, 3vw, 28px);
+    flex-grow:1;
+  }
+
+  .price-features li{
+    font-size:.86rem;
+    color:var(--muted);
+    padding-left:18px;
+    position:relative;
+    line-height:1.4;
+  }
+
+  .price-features li::before{
+    content:'';
+    position:absolute;
+    left:0; top:8px;
+    width:7px; height:1px;
+    background:var(--blue);
+  }
+
+  .price-foot{
+    border-top:1px solid var(--line);
+    padding-top: clamp(14px, 2vw, 18px);
+  }
+
+  .price-card.featured .price-foot{ border-top-color: rgba(79,126,255,.3); }
+
+  .price-label{
+    font-size:.74rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted2);
+    margin-bottom:6px;
+  }
+
+  .price-value{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  }
+
+  .price-value span{
+    font-family:'DM Sans', sans-serif;
+    font-weight:400;
+    font-size:.7em;
+    color:var(--muted);
+  }
+
+  .pricing-note{
+    margin-top: clamp(18px, 2.6vw, 24px);
+    font-size:.85rem;
+    color:var(--muted);
+    max-width:78ch;
+    line-height:1.6;
+  }
+
+  .pricing-note b{ color:var(--white); }
+
+  /* ---------- Serviços avulsos (oculto, acesso restrito) ---------- */
+  .alt-toggle{
+    display:none;
+    margin-top: clamp(28px, 4vw, 44px);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding: clamp(20px, 3vw, 28px);
+  }
+
+  .alt-toggle.visible{ display:block; }
+
+  .alt-intro{
+    font-size:.88rem;
+    color:var(--muted);
+    margin-bottom: clamp(16px, 2.4vw, 22px);
+  }
+
+  .alt-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: clamp(14px, 2vw, 20px);
+  }
+
+  .alt-card{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding: clamp(16px, 2.2vw, 22px);
+  }
+
+  .alt-card h4{
+    font-family:'Sora', sans-serif;
+    font-size:.95rem;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+
+  .alt-price{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size:1.15rem;
+    color:var(--blue);
+  }
+
+  .alt-price span{
+    font-family:'DM Sans', sans-serif;
+    font-weight:400;
+    font-size:.7em;
+    color:var(--muted);
+  }
+
+  .alt-price--sub{
+    font-size:.95rem;
+    margin-top:2px;
+  }
+
+  .alt-card p{
+    margin-top:8px;
+    font-size:.84rem;
+    color:var(--muted);
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-block{
+    margin-top: clamp(32px, 5vw, 52px);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap: clamp(20px, 3vw, 32px);
+  }
+
+  .cta-text h3{ margin-bottom:8px; }
+  .cta-text p{ color:var(--muted); max-width:46ch; }
+
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--blue);
+    color:var(--black);
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    text-decoration:none;
+    padding:16px 30px;
+    border-radius:100px;
+    white-space:nowrap;
+    transition: transform .2s, box-shadow .2s;
+    flex-shrink:0;
+  }
+
+  .cta-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px -10px rgba(79,126,255,.6);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    .stats{ grid-template-columns:repeat(2, 1fr); }
+    .comp-grid{ grid-template-columns:1fr; }
+    .services{ grid-template-columns:1fr; }
+    .pricing-grid{ grid-template-columns:1fr; }
+    .alt-grid{ grid-template-columns:1fr; }
+    .intro-grid{ grid-template-columns:1fr; }
+    .reality{ grid-template-columns:1fr; gap:8px; }
+    .navdots{ display:none; }
+    .wordmark{ font-size:.7rem; }
+    .arrows{ flex-direction:row; }
+
+    .timeline-track{ grid-template-columns:1fr; gap:0; }
+    .timeline-track::before{ top:0; bottom:0; left:6px; right:auto; width:2px; height:auto; }
+    .tl-step{ padding-top:0; padding-left:32px; padding-bottom: clamp(20px, 4vw, 28px); }
+    .tl-step:last-child{ padding-bottom:0; }
+    .tl-step::before{ top:5px; left:0; }
+
+  }
+
+  @media (max-width: 520px){
+    .stats{ grid-template-columns:1fr 1fr; }
+    .gap-row .gap-top{ flex-direction:column; gap:2px; }
+    .gap-row .gap-top .gval{ text-align:left; }
+    .slide{ padding-top:64px; padding-bottom:64px; }
+    .client-chip{ width:100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .slide-inner{ animation:none; opacity:1; transform:none; }
+    .gap-fill{ animation:none; }
+    .gap-fill.f1{ width:78%; }
+    .gap-fill.f2{ width:60%; }
+    .scroll-hint svg{ animation:none; }
+  }
+</style>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:site" content="@warejuridico"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://warejuridico.com.br/#webpage",
+  "url": "https://warejuridico.com.br/",
+  "name": "Ware Jurídico · Apresentação Comercial",
+  "description": "Agência de marketing digital especializada em advocacia.",
+  "isPartOf": {"@id": "https://warejuridico.com.br/#website"},
+  "publisher": {"@id": "https://warejuridico.com.br/#organization"},
+  "dateModified": "2026-06-21",
+  "inLanguage": "pt-BR"
+}
+</script>
+</head>
+<body>
+
+<div class="bg-deco" aria-hidden="true">
+  <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="860" cy="120" r="260" fill="none" stroke="var(--blue)" stroke-width="1" opacity="0.18"/>
+    <circle cx="860" cy="120" r="340" fill="none" stroke="var(--blue)" stroke-width="1" opacity="0.08"/>
+    <circle cx="90" cy="930" r="300" fill="none" stroke="var(--white)" stroke-width="1" opacity="0.05"/>
+    <circle cx="500" cy="500" r="520" fill="none" stroke="var(--white)" stroke-width="1" opacity="0.035"/>
+    <line x1="-50" y1="260" x2="1050" y2="430" stroke="var(--white)" stroke-width="1" opacity="0.045"/>
+    <line x1="-50" y1="760" x2="1050" y2="620" stroke="var(--blue)" stroke-width="1" opacity="0.07"/>
+  </svg>
+</div>
+
+<div class="page-indicator"><b id="actNum">01</b> / <span id="actTotal">08</span></div>
+<div class="wordmark">WARE <span>JURÍDICO</span></div>
+
+<nav class="navdots" id="navdots">
+  <button data-target="s0" class="active"><span class="navlabel">Sobre a Ware</span></button>
+  <button data-target="s1"><span class="navlabel">Conexão</span></button>
+  <button data-target="s2"><span class="navlabel">Diagnóstico</span></button>
+  <button data-target="s3"><span class="navlabel">O espelho</span></button>
+  <button data-target="s4"><span class="navlabel">Proposta</span></button>
+  <button data-target="s5"><span class="navlabel">Como funciona</span></button>
+  <button data-target="s6"><span class="navlabel">Investimento</span></button>
+</nav>
+
+<div class="arrows">
+  <button id="prevBtn" aria-label="Anterior">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button id="nextBtn" aria-label="Próximo">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- ABERTURA — QUEM É A WARE + OAB + CLIENTES -->
+  <section class="slide" id="s0">
+    <div class="slide-inner">
+      <div class="eyebrow">Antes de começar</div>
+      <h2>Quem está do outro lado desta apresentação</h2>
+
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="icard-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L3 7.5V12C3 17 6.75 21 12 22.5C17.25 21 21 17 21 12V7.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Quem é a Ware</h3>
+          <p>Agência de marketing dedicada exclusivamente à advocacia, parceira da ABA (Associação Brasileira dos Advogados). Trabalhamos com escritórios de diversas áreas, sempre com foco em transformar presença digital em clientes previsíveis.</p>
+        </div>
+
+        <div class="intro-card">
+          <div class="icard-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3L3 7.5V12C3 17 6.75 21 12 22.5C17.25 21 21 17 21 12V7.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Crescimento dentro das regras da OAB</h3>
+          <p>Cada site, post, anúncio e perfil que produzimos passa por validação de compliance publicitário da advocacia, dentro do Provimento 205/2021 da OAB. Você cresce sem expor seu registro a risco disciplinar.</p>
+        </div>
+      </div>
+
+      <div class="clients-block">
+        <div class="clients-title">Alguns escritórios que já estruturamos</div>
+        <div class="clients-row">
+          <a class="client-chip" href="https://www.instagram.com/jaqueoc_adv" target="_blank" rel="noopener">
+            <span class="ci-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="ci-text">
+              <span class="ci-name">Jaqueline Oliveira</span>
+              <span class="ci-handle">@jaqueoc_adv</span>
+            </span>
+          </a>
+
+          <a class="client-chip" href="https://www.instagram.com/mairaadvocacia" target="_blank" rel="noopener">
+            <span class="ci-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="ci-text">
+              <span class="ci-name">Maíra Advocacia</span>
+              <span class="ci-handle">@mairaadvocacia</span>
+            </span>
+          </a>
+
+          <a class="client-chip" href="https://www.instagram.com/vignaadvogados" target="_blank" rel="noopener">
+            <span class="ci-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="ci-text">
+              <span class="ci-name">Vigna Advogados</span>
+              <span class="ci-handle">@vignaadvogados</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        Começar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATO 1 — CONEXÃO E CONTEXTO -->
+  <section class="slide" id="s1">
+    <div class="slide-inner">
+      <div class="eyebrow">Mercado jurídico digital · Brasil</div>
+      <h1>Antes de falar do seu escritório, veja o que os números do mercado jurídico brasileiro mostram.</h1>
+      <p class="lead">Reunimos dados de pesquisas recentes da OAB, da FGV e do Google sobre como a advocacia brasileira aparece, ou deixa de aparecer, para quem busca um profissional no Google e nas redes sociais. Esses números são o ponto de partida desta conversa.</p>
+
+      <div class="scroll-hint">
+        Diagnóstico do mercado
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATO 2 — DIAGNÓSTICO -->
+  <section class="slide" id="s2">
+    <div class="slide-inner">
+      <div class="eyebrow">Ato 2 · Diagnóstico</div>
+      <h2>O que os números do mercado jurídico brasileiro mostram</h2>
+      <p class="lead">O mercado é grande, concorrido e cada vez mais decidido no digital. Mas a forma como os escritórios ocupam esse espaço ainda está muito atrás da forma como os clientes pesquisam.</p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num"><span class="accent">1,3</span>M</div>
+          <div class="label">advogados ativos disputando espaço no Brasil</div>
+          <div class="src">OAB / FGV, Perfil ADV 2024</div>
+        </div>
+        <div class="stat">
+          <div class="num"><span class="accent">78</span>%</div>
+          <div class="label">dos brasileiros pesquisam informação jurídica online antes de contratar um advogado</div>
+          <div class="src">Ipsos / Google, 2024</div>
+        </div>
+        <div class="stat">
+          <div class="num"><span class="accent">65</span>%</div>
+          <div class="label">dos escritórios já usam redes sociais para prospectar clientes</div>
+          <div class="src">OAB Nacional, 2023</div>
+        </div>
+        <div class="stat">
+          <div class="num"><span class="accent">72</span>%</div>
+          <div class="label">dos advogados atuam de forma autônoma, sem estrutura própria de marketing</div>
+          <div class="src">Perfil ADV / FGV, 2024</div>
+        </div>
+      </div>
+
+      <div class="gap-block">
+        <div class="gap-row">
+          <div class="gap-top"><span class="gname">Clientes que pesquisam um advogado online antes de contratar</span><span class="gval">78%</span></div>
+          <div class="gap-track"><div class="gap-fill f1"></div></div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-top"><span class="gname">Sites de escritórios com segurança e conformidade LGPD adequadas, mesmo entre as maiores bancas do país</span><span class="gval">60%</span></div>
+          <div class="gap-track"><div class="gap-fill f2"></div></div>
+        </div>
+        <div class="gap-caption">Se até as maiores bancas do país têm lacunas estruturais, para um escritório de porte médio esse espaço tende a ser ainda maior, e é exatamente aí que está a oportunidade.</div>
+      </div>
+
+      <div class="comp-grid">
+        <div class="comp-card">
+          <div class="comp-head">
+            <span class="comp-name">OAB / FGV · Perfil ADV</span>
+            <span class="comp-rating">2024</span>
+          </div>
+          <p>O Brasil tem 1,3 milhão de advogados ativos, e 72% atuam de forma autônoma. É o país com a maior proporção de advogados por habitante do mundo, um mercado grande e fragmentado.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-head">
+            <span class="comp-name">Ipsos / Google</span>
+            <span class="comp-rating">2024</span>
+          </div>
+          <p>78% dos brasileiros buscam informação jurídica online antes de contratar um advogado. A decisão já começa no Google, antes de qualquer indicação.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-head">
+            <span class="comp-name">OAB Nacional</span>
+            <span class="comp-rating">2023</span>
+          </div>
+          <p>65% dos escritórios de advocacia brasileiros já usam redes sociais ativamente para prospectar clientes. Ter perfil deixou de ser diferencial, virou ponto de partida.</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-head">
+            <span class="comp-name">Análise Advocacia 500</span>
+            <span class="comp-rating">2022</span>
+          </div>
+          <p>Entre as 468 maiores bancas do país, 2 em cada 5 sites ainda não atendem a requisitos básicos de segurança e conformidade com a LGPD. Ter site não é o mesmo que ter estrutura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATO 3 — O ESPELHO -->
+  <section class="slide" id="s3">
+    <div class="slide-inner">
+      <div class="eyebrow">Ato 3 · O espelho</div>
+      <h2>Onde o seu escritório está hoje, e onde pode estar</h2>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="ptitle"><span class="from">Invisível</span><span class="arrow">→</span><span class="to">Visível</span></div>
+          <p>78% dos brasileiros pesquisam um advogado no Google antes de contratar. Se o seu escritório não aparece nessa busca, com site, Google Meu Negócio e redes sociais ativas, você não está apenas perdendo visibilidade. Você não está na disputa.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="ptitle"><span class="from">Imprevisível</span><span class="arrow">→</span><span class="to">Previsível</span></div>
+          <p>Mais de 1,3 milhão de advogados disputam espaço no Brasil, e a maioria ainda depende só de indicação. Quem constrói um canal próprio de captação, site, conteúdo, Google Meu Negócio e tráfego pago trabalhando juntos, deixa de esperar o mês ser bom e passa a decidir quantos contatos quer gerar.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="ptitle"><span class="from">Dependente</span><span class="arrow">→</span><span class="to">Independente</span></div>
+          <p>Reputação alta sem visibilidade prende você à indicação de quem já te conhece. Visibilidade com estrutura, site, conteúdo, tráfego pago e Google Meu Negócio trabalhando juntos, te coloca na frente de quem nunca ouviu falar de você, mas precisa exatamente do que você faz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATO 4 — PROPOSTA -->
+  <section class="slide" id="s4">
+    <div class="slide-inner">
+      <div class="eyebrow">Ato 4 · A proposta</div>
+      <h2>O que a Ware estrutura para você</h2>
+
+      <div class="services">
+        <div class="service-card">
+          <h3>Site institucional</h3>
+          <p>Pensado para conversão, não só para existir. Estrutura, SEO local e linguagem que fala com quem busca um advogado na sua área de atuação e na sua cidade.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tráfego pago (Google e Meta)</h3>
+          <p>Presença paga dentro das normas da OAB, para você aparecer enquanto sua autoridade orgânica está sendo construída.</p>
+        </div>
+        <div class="service-card">
+          <h3>Gestão de redes sociais</h3>
+          <p>Conteúdo jurídico estratégico, como o que já funciona para outros nomes desse mercado, mas com a sua marca e o seu posicionamento.</p>
+        </div>
+        <div class="service-card">
+          <h3>Google Meu Negócio</h3>
+          <p>Perfil otimizado para aparecer e converter exatamente na busca que mapeamos nesta apresentação.</p>
+        </div>
+      </div>
+
+      <p class="diff-line">Tudo isso com <b>painel de controle de leads</b>, scripts por etapa de atendimento, relatórios mensais, atualizações jurídicas e consultoria estratégica contínua.</p>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA — CICLO DE IMPLEMENTAÇÃO -->
+  <section class="slide" id="s5">
+    <div class="slide-inner">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Do diagnóstico à entrega, sem ficar no escuro</h2>
+      <p class="lead">Cada etapa é pensada para você nunca ficar na dúvida sobre o que está sendo feito pelo crescimento do seu escritório.</p>
+
+      <div class="timeline">
+        <div class="timeline-track">
+          <div class="tl-step">
+            <div class="tl-tag">Etapa 1</div>
+            <h3>Kickoff e diagnóstico</h3>
+            <p>Mapeamos sua presença digital, a concorrência e seus objetivos antes de qualquer ação, como fizemos nesta apresentação.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-tag">Etapa 2</div>
+            <h3>Estratégia e estrutura</h3>
+            <p>Montamos um plano sob medida: site, conteúdo, tráfego pago e Google Meu Negócio, sempre dentro das normas da OAB.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-tag">Etapa 3</div>
+            <h3>Execução com aprovação</h3>
+            <p>Tudo passa por você antes de ir ao ar. Controle total sobre o que é publicado em seu nome.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-tag">Etapa 4</div>
+            <h3>Acompanhamento e otimização</h3>
+            <p>Relatórios mensais e ajustes constantes, para o crescimento ser consistente, não um evento isolado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTIMENTO + CTA -->
+  <section class="slide" id="s6">
+    <div class="slide-inner">
+      <div class="eyebrow">Investimento</div>
+      <h2>Planos pensados para o seu momento</h2>
+      <p class="lead">Três formatos de parceria, do ponto de partida ideal até a estrutura completa de autoridade digital.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-name">Essencial</div>
+          <div class="price-tag">Foco em visibilidade local</div>
+          <ul class="price-features">
+            <li>Google Meu Negócio otimizado (SEO local)</li>
+            <li>Gestão de redes sociais (feed + stories)</li>
+            <li>Relatórios mensais de performance</li>
+          </ul>
+          <div class="price-foot">
+            <div class="price-label">Investimento mensal</div>
+            <div class="price-value">R$ 2.000<span>/mês</span></div>
+          </div>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-name">Crescimento</div>
+          <div class="price-tag">Parceria estratégica</div>
+          <ul class="price-features">
+            <li>Tudo do plano Essencial</li>
+            <li>Site institucional completo</li>
+            <li>Painel de controle de leads</li>
+            <li>Consultoria estratégica mensal</li>
+          </ul>
+          <div class="price-foot">
+            <div class="price-label">Investimento mensal</div>
+            <div class="price-value">R$ 2.500<span>/mês</span></div>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">Autoridade</div>
+          <div class="price-tag">Foco em liderança de mercado</div>
+          <ul class="price-features">
+            <li>Tudo do plano Crescimento</li>
+            <li>Tráfego pago (Google e Meta)</li>
+            <li>Relatório de performance de campanhas</li>
+          </ul>
+          <div class="price-foot">
+            <div class="price-label">Investimento mensal</div>
+            <div class="price-value">R$ 3.000<span>/mês</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-note">Esse valor mensal contempla, nas redes sociais, a gestão completa e criação de posts; no site, posts no blog, backup, atualização e hospedagem; no tráfego pago, o acompanhamento de performance das campanhas; e no Google Meu Negócio, o acompanhamento contínuo e a atualização do perfil. <b>Valores de referência para esta proposta inicial</b>, o escopo final é ajustado na consultoria estratégica.</p>
+
+      <p class="pricing-note"><b>Sobre o contrato:</b> trabalhamos com vigência mínima de 6 meses. É o tempo necessário para que site, conteúdo, tráfego pago e Google Meu Negócio comecem a trabalhar juntos e gerar resultado consistente.</p>
+
+      <div class="alt-toggle" id="altPlan">
+        <p class="alt-intro">Também trabalhamos esses serviços de forma isolada, caso prefira começar por uma frente específica:</p>
+        <div class="alt-grid">
+            <div class="alt-card">
+              <h4>Site institucional</h4>
+              <div class="alt-price">R$ 2.500 <span>pagamento único</span></div>
+              <div class="alt-price alt-price--sub">+ R$ 200<span>/mês</span></div>
+              <p>Manutenção e hospedagem.</p>
+            </div>
+            <div class="alt-card">
+              <h4>Gestão de redes sociais</h4>
+              <div class="alt-price">R$ 1.500<span>/mês</span></div>
+              <p>12 posts e 15 stories por mês.</p>
+            </div>
+            <div class="alt-card">
+              <h4>Google Meu Negócio</h4>
+              <div class="alt-price">R$ 500 <span>pagamento único</span></div>
+              <p>Criação e otimização do perfil.</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Vamos estruturar isso juntos?</h3>
+          <p>O próximo passo é simples: conversar sobre como aplicar isso na prática, dentro da sua rotina e do seu orçamento.</p>
+        </div>
+        <a class="cta-btn" href="https://wa.me/5518996745458?text=Ol%C3%A1!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20que%20a%20Ware%20preparou%20e%20quero%20entender%20melhor%20a%20proposta." target="_blank" rel="noopener">
+          Falar agora no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const dots = Array.from(document.querySelectorAll('.navdots button'));
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const actNum = document.getElementById('actNum');
+  const actTotal = document.getElementById('actTotal');
+
+  let currentIndex = 0;
+  actTotal.textContent = String(slides.length).padStart(2, '0');
+
+  // active dot + indicator
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = slides.indexOf(entry.target);
+        currentIndex = idx;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[idx].classList.add('active');
+        actNum.textContent = String(idx + 1).padStart(2, '0');
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === slides.length - 1;
+      }
+    });
+  }, { threshold: 0.3 });
+  slides.forEach(s => navObserver.observe(s));
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      slides[i].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  function goTo(i){
+    if (i < 0 || i >= slides.length) return;
+    slides[i].scrollIntoView({ behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+
+  window.addEventListener('keydown', (e) => {
+    if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); goTo(currentIndex + 1); }
+    if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); goTo(currentIndex - 1); }
+  });
+
+  // toque triplo no logo revela o bloco de serviços avulsos
+  const wordmark = document.querySelector('.wordmark');
+  const altPlan = document.getElementById('altPlan');
+  let tapCount = 0;
+  let tapTimer = null;
+  wordmark.addEventListener('click', () => {
+    tapCount++;
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => { tapCount = 0; }, 800);
+    if (tapCount >= 3) {
+      altPlan.classList.toggle('visible');
+      tapCount = 0;
+    }
+  });
+</script>
+
+</body>
+</html>
